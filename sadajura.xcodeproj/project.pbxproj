@@ -39,6 +39,7 @@
 		D245C83D1BAE95360072867D /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C83C1BAE95360072867D /* SubmitViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D245C83F1BAE95F80072867D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C83E1BAE95F80072867D /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D245C8411BAE9BEC0072867D /* FlightDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C8401BAE9BEC0072867D /* FlightDetailTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		D245C8431BAEB6080072867D /* NSDateISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C8421BAEB6080072867D /* NSDateISO8601.swift */; settings = {ASSET_TAGS = (); }; };
 		D28272B81BAE4131003269CE /* RegisterFlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28272B61BAE4131003269CE /* RegisterFlightViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D28272BB1BAE5F19003269CE /* FriendTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28272BA1BAE5F19003269CE /* FriendTripViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D28272BD1BAE6028003269CE /* FriendTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28272BC1BAE6028003269CE /* FriendTripTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
@@ -103,6 +104,7 @@
 		D245C83C1BAE95360072867D /* SubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
 		D245C83E1BAE95F80072867D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D245C8401BAE9BEC0072867D /* FlightDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetailTableViewCell.swift; sourceTree = "<group>"; };
+		D245C8421BAEB6080072867D /* NSDateISO8601.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateISO8601.swift; sourceTree = "<group>"; };
 		D28272B61BAE4131003269CE /* RegisterFlightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterFlightViewController.swift; sourceTree = "<group>"; };
 		D28272BA1BAE5F19003269CE /* FriendTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTripViewController.swift; sourceTree = "<group>"; };
 		D28272BC1BAE6028003269CE /* FriendTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTripTableViewCell.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				666336E71BAE3D9D00A2F559 /* ViewController.swift */,
 				D28272B61BAE4131003269CE /* RegisterFlightViewController.swift */,
 				D28272BA1BAE5F19003269CE /* FriendTripViewController.swift */,
+				D245C8421BAEB6080072867D /* NSDateISO8601.swift */,
 				D28272BC1BAE6028003269CE /* FriendTripTableViewCell.swift */,
 				D245C83A1BAE93D20072867D /* FlightDetailViewController.swift */,
 				D245C8401BAE9BEC0072867D /* FlightDetailTableViewCell.swift */,
@@ -451,6 +454,7 @@
 				66B311AA1BAEAFDF0063B146 /* MyAlertView.swift in Sources */,
 				D28272BB1BAE5F19003269CE /* FriendTripViewController.swift in Sources */,
 				66B311A21BAE98000063B146 /* Flight.swift in Sources */,
+				D245C8431BAEB6080072867D /* NSDateISO8601.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

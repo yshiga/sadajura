@@ -12,7 +12,9 @@ class FriendTripTableViewCell: UITableViewCell {
 
     @IBOutlet var userImage: UIImageView!
     @IBOutlet var userName: UILabel!
-    @IBOutlet var travelRegion: UILabel!
+    @IBOutlet var from: UILabel!
+    @IBOutlet var to: UILabel!
+    @IBOutlet var date: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

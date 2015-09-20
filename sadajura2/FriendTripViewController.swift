@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import Parse
 
 class FriendTripViewController: UIViewController {
-
+    var flights :[Flight]?
+    
+    @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        Flight.findOthers { (flights, error) -> Void in
+            if error == nil {
+                self.flights = flights
+                self.tableView.reloadData()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,21 +42,28 @@ extension FriendTripViewController :UITableViewDelegate{
 }
 
 extension FriendTripViewController: UITableViewDataSource {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if let count = flights?.count{
+            return count
+        }else{
+            return 0
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FriendTripTableViewCell", forIndexPath: indexPath) as! FriendTripTableViewCell
         
         cell.userImage.image = UIImage(named: "yuichi")
-        cell.userName.text = "Yuichiki Shiga "
-        cell.travelRegion.text = "Osaka"
         
+        if let flight = self.flights?[indexPath.row] {
+            cell.userName.text = flight.user.username
+            cell.from.text = flight.from
+            cell.to.text = flight.to
+            cell.date.text = NSDate.ISOStringFromDate(flight.date)
+        } else {
+           print("flight nothing")
+        }
+
         return cell
     }
 }
