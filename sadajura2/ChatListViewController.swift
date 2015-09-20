@@ -8,14 +8,14 @@
 
 import UIKit
 
-class FriendTripViewController: UIViewController {
-
+class ChatListViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -23,14 +23,14 @@ class FriendTripViewController: UIViewController {
     
 }
 
-extension FriendTripViewController :UITableViewDelegate{
+extension ChatListViewController :UITableViewDelegate{
     func tableView(tableView: UITableView,didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let vc = FlightDetailViewController()
+        let vc = ChatViewController()
         self.presentViewController(vc, animated: true, completion: nil)
     }
 }
 
-extension FriendTripViewController: UITableViewDataSource {
+extension ChatListViewController: UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -40,7 +40,7 @@ extension FriendTripViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("FriendTripTableViewCell", forIndexPath: indexPath) as! FriendTripTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ChatListViewCell", forIndexPath: indexPath) as! ChatListViewCell
         
         cell.userImage.image = UIImage(named: "yuichi")
         cell.userName.text = "Yuichiki Shiga "
