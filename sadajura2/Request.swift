@@ -31,7 +31,7 @@ class Request: PFObject, PFSubclassing {
         self.desc = desc
         
         if image != nil {
-            self.image = createPFFileByUIImage(image!)
+            self.image = createPFFileByUIImage(image!.resizeM())
         }
         
     }

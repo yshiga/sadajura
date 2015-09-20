@@ -7,17 +7,101 @@
 //
 
 import UIKit
+import ParseUI
+import PhotoTweaks
 
 class SubmitViewController: UIViewController {
+    
+    var flight:Flight?
 
+    @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var productDescTextView: UITextView!
+    
+    @IBOutlet weak var productNameTextField: UITextField!
+    @IBOutlet weak var requstToUserImage: PFImageView!
+    @IBOutlet weak var requestToUserName: UILabel!
+    
+
+    
+    
+    var imagePicker :UIImagePickerController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        requestToUserName.text = flight!.user.username
+        
+        flight!.user.profileImage?.getDataInBackgroundWithBlock({ (data, error) -> Void in
+            if error == nil {
+                let image = UIImage(data:data!)
+               self.requstToUserImage.image = image
+            }
+        })
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func didSubmitClick(sender: AnyObject) {
+        let newRequest = Request(flight: flight!, sender: User.currentUser()!, product: productNameTextField.text!, desc: productDescTextView.text, image: productImageView.image)
+        
+        newRequest.saveInBackgroundWithBlock { (result, error) -> Void in
+            if error == nil {
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
+            } else {
+                MyAlertView.showErrorAlert(error!.localizedDescription)
+            }
+        }
+    }
+    
+    @IBAction func didChangeImageClick(sender: AnyObject) {
+        presentCamera()
+    }
+    @IBAction func didImageClick(sender: AnyObject) {
+        presentCamera()
+    }
+    
+    func presentCamera() {
+        self.imagePicker = UIImagePickerController()
+//        self.imagePicker!.allowsEditing = true
+        self.imagePicker!.delegate = self
+        self.imagePicker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        self.presentViewController(self.imagePicker!, animated: true, completion: nil)
+    }
 }
+
+extension SubmitViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
+    {
+        let image: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        
+        let photoTweaksViewController = PhotoTweaksViewController(image: image)
+        photoTweaksViewController.delegate = self
+        picker.presentViewController(photoTweaksViewController, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+extension SubmitViewController: PhotoTweaksViewControllerDelegate {
+    func photoTweaksController(controller: PhotoTweaksViewController!, didFinishWithCroppedImage croppedImage: UIImage!) {
+        
+        self.productImageView.image = croppedImage
+        controller.dismissViewControllerAnimated(true, completion:{
+                self.imagePicker!.dismissViewControllerAnimated(false, completion: nil)
+        })
+    }
+    
+    func photoTweaksControllerDidCancel(controller: PhotoTweaksViewController!) {
+    controller.dismissViewControllerAnimated(true, completion: {
+            self.imagePicker!.dismissViewControllerAnimated(false, completion: nil)
+    });
+}
+}
+
