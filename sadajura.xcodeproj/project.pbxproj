@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		666336E61BAE3D9D00A2F559 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666336E51BAE3D9D00A2F559 /* AppDelegate.swift */; };
+		666336E81BAE3D9D00A2F559 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666336E71BAE3D9D00A2F559 /* ViewController.swift */; };
+		666336EB1BAE3D9D00A2F559 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666336E91BAE3D9D00A2F559 /* Main.storyboard */; };
+		666336ED1BAE3D9D00A2F559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 666336EC1BAE3D9D00A2F559 /* Assets.xcassets */; };
+		666336F01BAE3D9D00A2F559 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666336EE1BAE3D9D00A2F559 /* LaunchScreen.storyboard */; };
+		666336FB1BAE3D9D00A2F559 /* sadajura2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666336FA1BAE3D9D00A2F559 /* sadajura2Tests.swift */; };
+		666337061BAE3D9D00A2F559 /* sadajura2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666337051BAE3D9D00A2F559 /* sadajura2UITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		666336F71BAE3D9D00A2F559 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 666336DA1BAE3D9D00A2F559 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 666336E11BAE3D9D00A2F559;
+			remoteInfo = sadajura2;
+		};
+		666337021BAE3D9D00A2F559 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 666336DA1BAE3D9D00A2F559 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 666336E11BAE3D9D00A2F559;
+			remoteInfo = sadajura2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		666336E21BAE3D9D00A2F559 /* sadajura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sadajura.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		666336E51BAE3D9D00A2F559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		666336E71BAE3D9D00A2F559 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		666336EA1BAE3D9D00A2F559 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		666336EC1BAE3D9D00A2F559 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		666336EF1BAE3D9D00A2F559 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		666336F11BAE3D9D00A2F559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		666336F61BAE3D9D00A2F559 /* sadajura.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sadajura.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		666336FA1BAE3D9D00A2F559 /* sadajura2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sadajura2Tests.swift; sourceTree = "<group>"; };
+		666336FC1BAE3D9D00A2F559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		666337011BAE3D9D00A2F559 /* sadajura.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sadajura.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		666337051BAE3D9D00A2F559 /* sadajura2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sadajura2UITests.swift; sourceTree = "<group>"; };
+		666337071BAE3D9D00A2F559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		666336DF1BAE3D9D00A2F559 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		666336F31BAE3D9D00A2F559 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		666336FE1BAE3D9D00A2F559 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		666336D91BAE3D9D00A2F559 = {
+			isa = PBXGroup;
+			children = (
+				666336E41BAE3D9D00A2F559 /* sadajura2 */,
+				666336F91BAE3D9D00A2F559 /* sadajura2Tests */,
+				666337041BAE3D9D00A2F559 /* sadajura2UITests */,
+				666336E31BAE3D9D00A2F559 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		666336E31BAE3D9D00A2F559 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				666336E21BAE3D9D00A2F559 /* sadajura.app */,
+				666336F61BAE3D9D00A2F559 /* sadajura.xctest */,
+				666337011BAE3D9D00A2F559 /* sadajura.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		666336E41BAE3D9D00A2F559 /* sadajura2 */ = {
+			isa = PBXGroup;
+			children = (
+				666336E51BAE3D9D00A2F559 /* AppDelegate.swift */,
+				666336E71BAE3D9D00A2F559 /* ViewController.swift */,
+				666336E91BAE3D9D00A2F559 /* Main.storyboard */,
+				666336EC1BAE3D9D00A2F559 /* Assets.xcassets */,
+				666336EE1BAE3D9D00A2F559 /* LaunchScreen.storyboard */,
+				666336F11BAE3D9D00A2F559 /* Info.plist */,
+			);
+			path = sadajura2;
+			sourceTree = "<group>";
+		};
+		666336F91BAE3D9D00A2F559 /* sadajura2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				666336FA1BAE3D9D00A2F559 /* sadajura2Tests.swift */,
+				666336FC1BAE3D9D00A2F559 /* Info.plist */,
+			);
+			path = sadajura2Tests;
+			sourceTree = "<group>";
+		};
+		666337041BAE3D9D00A2F559 /* sadajura2UITests */ = {
+			isa = PBXGroup;
+			children = (
+				666337051BAE3D9D00A2F559 /* sadajura2UITests.swift */,
+				666337071BAE3D9D00A2F559 /* Info.plist */,
+			);
+			path = sadajura2UITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		666336E11BAE3D9D00A2F559 /* sadajura */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6663370A1BAE3D9D00A2F559 /* Build configuration list for PBXNativeTarget "sadajura" */;
+			buildPhases = (
+				666336DE1BAE3D9D00A2F559 /* Sources */,
+				666336DF1BAE3D9D00A2F559 /* Frameworks */,
+				666336E01BAE3D9D00A2F559 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = sadajura;
+			productName = sadajura2;
+			productReference = 666336E21BAE3D9D00A2F559 /* sadajura.app */;
+			productType = "com.apple.product-type.application";
+		};
+		666336F51BAE3D9D00A2F559 /* sadajuraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6663370D1BAE3D9D00A2F559 /* Build configuration list for PBXNativeTarget "sadajuraTests" */;
+			buildPhases = (
+				666336F21BAE3D9D00A2F559 /* Sources */,
+				666336F31BAE3D9D00A2F559 /* Frameworks */,
+				666336F41BAE3D9D00A2F559 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				666336F81BAE3D9D00A2F559 /* PBXTargetDependency */,
+			);
+			name = sadajuraTests;
+			productName = sadajura2Tests;
+			productReference = 666336F61BAE3D9D00A2F559 /* sadajura.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		666337001BAE3D9D00A2F559 /* sadajuraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 666337101BAE3D9D00A2F559 /* Build configuration list for PBXNativeTarget "sadajuraUITests" */;
+			buildPhases = (
+				666336FD1BAE3D9D00A2F559 /* Sources */,
+				666336FE1BAE3D9D00A2F559 /* Frameworks */,
+				666336FF1BAE3D9D00A2F559 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				666337031BAE3D9D00A2F559 /* PBXTargetDependency */,
+			);
+			name = sadajuraUITests;
+			productName = sadajura2UITests;
+			productReference = 666337011BAE3D9D00A2F559 /* sadajura.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		666336DA1BAE3D9D00A2F559 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = whomentors;
+				TargetAttributes = {
+					666336E11BAE3D9D00A2F559 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					666336F51BAE3D9D00A2F559 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 666336E11BAE3D9D00A2F559;
+					};
+					666337001BAE3D9D00A2F559 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 666336E11BAE3D9D00A2F559;
+					};
+				};
+			};
+			buildConfigurationList = 666336DD1BAE3D9D00A2F559 /* Build configuration list for PBXProject "sadajura" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 666336D91BAE3D9D00A2F559;
+			productRefGroup = 666336E31BAE3D9D00A2F559 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				666336E11BAE3D9D00A2F559 /* sadajura */,
+				666336F51BAE3D9D00A2F559 /* sadajuraTests */,
+				666337001BAE3D9D00A2F559 /* sadajuraUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		666336E01BAE3D9D00A2F559 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				666336F01BAE3D9D00A2F559 /* LaunchScreen.storyboard in Resources */,
+				666336ED1BAE3D9D00A2F559 /* Assets.xcassets in Resources */,
+				666336EB1BAE3D9D00A2F559 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		666336F41BAE3D9D00A2F559 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		666336FF1BAE3D9D00A2F559 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		666336DE1BAE3D9D00A2F559 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				666336E81BAE3D9D00A2F559 /* ViewController.swift in Sources */,
+				666336E61BAE3D9D00A2F559 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		666336F21BAE3D9D00A2F559 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				666336FB1BAE3D9D00A2F559 /* sadajura2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		666336FD1BAE3D9D00A2F559 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				666337061BAE3D9D00A2F559 /* sadajura2UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		666336F81BAE3D9D00A2F559 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 666336E11BAE3D9D00A2F559 /* sadajura */;
+			targetProxy = 666336F71BAE3D9D00A2F559 /* PBXContainerItemProxy */;
+		};
+		666337031BAE3D9D00A2F559 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 666336E11BAE3D9D00A2F559 /* sadajura */;
+			targetProxy = 666337021BAE3D9D00A2F559 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		666336E91BAE3D9D00A2F559 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				666336EA1BAE3D9D00A2F559 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		666336EE1BAE3D9D00A2F559 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				666336EF1BAE3D9D00A2F559 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		666337081BAE3D9D00A2F559 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		666337091BAE3D9D00A2F559 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6663370B1BAE3D9D00A2F559 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = sadajura2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.whomentors.sadajura;
+				PRODUCT_NAME = sadajura;
+			};
+			name = Debug;
+		};
+		6663370C1BAE3D9D00A2F559 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = sadajura2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.whomentors.sadajura;
+				PRODUCT_NAME = sadajura;
+			};
+			name = Release;
+		};
+		6663370E1BAE3D9D00A2F559 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = sadajura2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.whomentors.sadajura2.sadajura2Tests;
+				PRODUCT_NAME = sadajura;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sadajura.app/sadajura";
+			};
+			name = Debug;
+		};
+		6663370F1BAE3D9D00A2F559 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = sadajura2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.whomentors.sadajura2.sadajura2Tests;
+				PRODUCT_NAME = sadajura;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sadajura.app/sadajura";
+			};
+			name = Release;
+		};
+		666337111BAE3D9D00A2F559 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = sadajura2UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.whomentors.sadajura2.sadajura2UITests;
+				PRODUCT_NAME = sadajura;
+				TEST_TARGET_NAME = sadajura2;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		666337121BAE3D9D00A2F559 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = sadajura2UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.whomentors.sadajura2.sadajura2UITests;
+				PRODUCT_NAME = sadajura;
+				TEST_TARGET_NAME = sadajura2;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		666336DD1BAE3D9D00A2F559 /* Build configuration list for PBXProject "sadajura" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				666337081BAE3D9D00A2F559 /* Debug */,
+				666337091BAE3D9D00A2F559 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6663370A1BAE3D9D00A2F559 /* Build configuration list for PBXNativeTarget "sadajura" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6663370B1BAE3D9D00A2F559 /* Debug */,
+				6663370C1BAE3D9D00A2F559 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6663370D1BAE3D9D00A2F559 /* Build configuration list for PBXNativeTarget "sadajuraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6663370E1BAE3D9D00A2F559 /* Debug */,
+				6663370F1BAE3D9D00A2F559 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		666337101BAE3D9D00A2F559 /* Build configuration list for PBXNativeTarget "sadajuraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				666337111BAE3D9D00A2F559 /* Debug */,
+				666337121BAE3D9D00A2F559 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 666336DA1BAE3D9D00A2F559 /* Project object */;
+}
