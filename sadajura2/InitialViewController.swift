@@ -15,10 +15,7 @@ class InitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
-        
     }
-    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,7 +25,6 @@ class InitialViewController: UIViewController {
         } else {
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("TabberController") as! MyTabberViewController
             self.navigationController?.pushViewController(vc, animated: false)
-            
         }
     }
 
@@ -43,19 +39,27 @@ class InitialViewController: UIViewController {
         signUpController.delegate = self
         signUpController.fields = ([PFSignUpFields.UsernameAndPassword, PFSignUpFields.SignUpButton, PFSignUpFields.Email, PFSignUpFields.DismissButton])
        
-        self.navigationController?.presentViewController(signUpController, animated: true, completion: nil)
+        self.presentViewController(signUpController, animated: true, completion: nil)
         
     }
     
     func openLoginView(){
         
-        let logInController = MyLogInViewController()
-        logInController.delegate = self
-        logInController.fields = ([PFLogInFields.UsernameAndPassword, PFLogInFields.LogInButton, PFLogInFields.SignUpButton, PFLogInFields.PasswordForgotten, PFLogInFields.DismissButton])
+        logInController = MyLogInViewController()
+        logInController!.delegate = self
+        logInController!.fields = ([PFLogInFields.UsernameAndPassword, PFLogInFields.LogInButton, PFLogInFields.SignUpButton, PFLogInFields.PasswordForgotten, PFLogInFields.DismissButton])
         
-        self.navigationController?.presentViewController(logInController, animated:true, completion: nil)
+        let signUpController = MySignUpViewController()
+        signUpController.delegate = self
+        signUpController.fields = ([PFSignUpFields.UsernameAndPassword, PFSignUpFields.SignUpButton, PFSignUpFields.Email, PFSignUpFields.DismissButton])
+        
+        logInController!.signUpController = signUpController
+        
+        self.presentViewController(logInController!, animated:true, completion: nil)
         
     }
+    
+    var logInController:MyLogInViewController?
 
 }
 
@@ -66,7 +70,10 @@ extension InitialViewController: PFSignUpViewControllerDelegate {
     }
     
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
-        signUpController.dismissViewControllerAnimated(true, completion: nil)
+        signUpController.dismissViewControllerAnimated(true, completion: {()->Void in
+            self.logInController!.dismissViewControllerAnimated(true, completion: nil)
+        })
+        
         
     }
     
