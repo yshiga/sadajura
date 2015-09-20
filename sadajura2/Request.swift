@@ -60,6 +60,28 @@ class Request: PFObject, PFSubclassing {
         return "Request"
     }
     
+    class func findByMe(block:(request:[Request], error:NSError?)-> Void) {
+    
+        let predicate:NSPredicate = NSPredicate(format: "receiver=%@ OR sender=%@", User.currentUser()!, User.currentUser()!)
+        
+        let query = PFQuery(className: Request.parseClassName(), predicate:predicate)
+        query.cachePolicy = PFCachePolicy.NetworkElseCache
+        
+        query.includeKey("sender")
+        query.orderByDescending("createdAt")
+        
+        query.findObjectsInBackgroundWithBlock({(objects, error) -> Void in
+            var requests = [Request]()
+            if error == nil {
+                requests = objects as! [Request]
+            } else {
+                print("\(error?.localizedDescription)", terminator: "")
+            }
+            block(request: requests, error: error)
+        })
+    }
+    
+    
     class func findByRequestToMe(block:(request:[Request], error:NSError?)-> Void) {
     
         let query = PFQuery(className: Request.parseClassName())

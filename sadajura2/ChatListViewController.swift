@@ -30,7 +30,7 @@ class ChatListViewController: UIViewController {
     }
     
     func fetchRequests(){
-       Request.findByRequestToMe { (requests, error) -> Void in
+       Request.findByMe{ (requests, error) -> Void in
         
             if error == nil {
                 self.requests = requests
