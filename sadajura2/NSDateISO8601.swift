@@ -13,9 +13,9 @@ public extension NSDate {
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
         dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+        dateFormatter.dateFormat = "MM-dd-yyyy"
         
-        return dateFormatter.stringFromDate(date).stringByAppendingString("Z")
+        return dateFormatter.stringFromDate(date)
     }
     
     public class func dateFromISOString(string: String) -> NSDate {
