@@ -14,6 +14,7 @@ class SubmitViewController: UIViewController {
     
     var flight:Flight?
 
+    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productDescTextView: UITextView!
     
@@ -27,6 +28,13 @@ class SubmitViewController: UIViewController {
         super.viewDidLoad()
         
         requestToUserName.text = flight!.user.username
+        
+       // configure the navigation bar
+        self.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationBar.barTintColor = UIColor.navigationbarColor()
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        self.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+        
         
         flight!.user.profileImage?.getDataInBackgroundWithBlock({ (data, error) -> Void in
             if error == nil {
@@ -42,6 +50,15 @@ class SubmitViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
+    @IBAction func didCancelClick(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     @IBAction func didSubmitClick(sender: AnyObject) {
         let newRequest = Request(flight: flight!, sender: User.currentUser()!, receiver:flight!.user, product: productNameTextField.text!, desc: productDescTextView.text, image: productImageView.image)
         

@@ -37,6 +37,12 @@ class ChatViewController: JSQMessagesViewController{
         // properties of super class
         self.collectionView!.collectionViewLayout.springinessEnabled = true
 
+        /*
+        var navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.width, 64))
+        self.view.addSubview(navigationBar)
+        self.navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Search, target: self, action: "barButtonItemClicked:"), animated: true)
+*/
+      
         
         // set MessageBubble
         let bubbleFactory = JSQMessagesBubbleImageFactory()
@@ -68,6 +74,8 @@ class ChatViewController: JSQMessagesViewController{
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        self.collectionView?.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height - 44)
         loadMessages()
     }
 
