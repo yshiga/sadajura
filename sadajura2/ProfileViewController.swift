@@ -99,8 +99,11 @@ extension ProfileViewController :UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("FlightCell", forIndexPath: indexPath) as! ProfileViewFlightCell
         let flight = self.flights[indexPath.row]
-        cell.titleLabel.text = flight.to!
-        cell.infoLabel.text = "from " + flight.from!
+        cell.titleLabel.text = flight.to! + "  from  " + flight.from!
+        
+        let dateFormatter: NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        cell.infoLabel.text =  dateFormatter.stringFromDate(flight.date!)
         
         return cell
     }

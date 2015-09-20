@@ -75,21 +75,30 @@ extension ChatListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("ChatListViewCell", forIndexPath: indexPath) as! ChatListViewCell
         
         let request = self.requests[indexPath.row]
-        request.sender!.profileImage?.getDataInBackgroundWithBlock { (data, error) -> Void in
-            if error == nil {
-                let image = UIImage(data: data!)
-                cell.userImage.image = image
-                
-            }
-        }
+        cell.userImage.layer.cornerRadius = cell.userImage.frame.width / 2
+        cell.userImage.layer.masksToBounds = true
         
+        // sender
         if User.currentUser()!.objectId == request.sender.objectId {
-//            cell.userName.text = "to " + request.receiver!.username!
+            cell.userName.text = request.receiver!.username!
+            
+            request.receiver.profileImage?.getDataInBackgroundWithBlock({ (data, error) -> Void in
+                if error == nil {
+                    let image = UIImage(data:data!)
+                    cell.userImage.image = image
+                }
+            })
         } else {
-            cell.userName.text = "from " + request.sender!.username!
+            cell.userName.text = request.sender!.username!
+            request.sender.profileImage?.getDataInBackgroundWithBlock({ (data, error) -> Void in
+                if error == nil {
+                    let image = UIImage(data:data!)
+                    cell.userImage.image = image
+                }
+            })
         }
         
-        cell.travelRegion.text = request.product
+        cell.travelRegion.text = request.product 
         
         return cell
     }
