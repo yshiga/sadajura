@@ -24,7 +24,7 @@ class InitialViewController: UIViewController {
             
         } else {
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("TabberController") as! MyTabberViewController
-            self.navigationController?.pushViewController(vc, animated: false)
+            self.navigationController?.presentViewController(vc, animated: false, completion: nil)
         }
     }
 

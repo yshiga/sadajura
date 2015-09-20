@@ -17,7 +17,7 @@ extension UIColor
     
     class func navigationbarColor() -> UIColor
     {
-        return UIColor(netHex: 0xFF9100)
+        return UIColor(netHex: 0xFF495a)
     }
     
     static func alertOKButtonColor()->UIColor {

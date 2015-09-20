@@ -14,6 +14,9 @@ class FriendTripViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
+        
+        initNavBar() 
+        
         super.viewDidLoad()
         Flight.findOthers { (flights, error) -> Void in
             if error == nil {
@@ -26,6 +29,17 @@ class FriendTripViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func initNavBar() {
+        
+        // configure the navigation bar
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.barTintColor = UIColor.navigationbarColor()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+        
+        self.title = "Friends"
     }
     
 }

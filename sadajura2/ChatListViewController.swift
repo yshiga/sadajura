@@ -16,6 +16,7 @@ class ChatListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initNavBar()
         // Do any additional setup after loading the view.
     }
     
@@ -37,6 +38,17 @@ class ChatListViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    func initNavBar() {
+        
+        // configure the navigation bar
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.barTintColor = UIColor.navigationbarColor()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+        
+        self.title = "Requests"
     }
     
 }
