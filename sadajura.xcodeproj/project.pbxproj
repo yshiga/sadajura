@@ -26,10 +26,18 @@
 		66B311A01BAE96730063B146 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B3119F1BAE96730063B146 /* UIImage+Resize.swift */; settings = {ASSET_TAGS = (); }; };
 		66B311A21BAE98000063B146 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B311A11BAE98000063B146 /* Flight.swift */; settings = {ASSET_TAGS = (); }; };
 		66B311A41BAE9AB60063B146 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B311A31BAE9AB60063B146 /* Request.swift */; settings = {ASSET_TAGS = (); }; };
+		D245C8301BAE752D0072867D /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C82F1BAE752D0072867D /* ChatListViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D245C8321BAE786D0072867D /* ChatListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C8311BAE786D0072867D /* ChatListViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		D245C8371BAE92AF0072867D /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = D245C8341BAE92AF0072867D /* chat.png */; settings = {ASSET_TAGS = (); }; };
+		D245C8381BAE92AF0072867D /* plain.png in Resources */ = {isa = PBXBuildFile; fileRef = D245C8351BAE92AF0072867D /* plain.png */; settings = {ASSET_TAGS = (); }; };
+		D245C8391BAE92AF0072867D /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = D245C8361BAE92AF0072867D /* profile.png */; settings = {ASSET_TAGS = (); }; };
+		D245C83B1BAE93D20072867D /* FlightDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C83A1BAE93D20072867D /* FlightDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D245C83D1BAE95360072867D /* SubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C83C1BAE95360072867D /* SubmitViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D245C83F1BAE95F80072867D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C83E1BAE95F80072867D /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D245C8411BAE9BEC0072867D /* FlightDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C8401BAE9BEC0072867D /* FlightDetailTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D28272B81BAE4131003269CE /* RegisterFlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28272B61BAE4131003269CE /* RegisterFlightViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D28272BB1BAE5F19003269CE /* FriendTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28272BA1BAE5F19003269CE /* FriendTripViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D28272BD1BAE6028003269CE /* FriendTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28272BC1BAE6028003269CE /* FriendTripTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		D28272BF1BAE6400003269CE /* imagetest.png in Resources */ = {isa = PBXBuildFile; fileRef = D28272BE1BAE6400003269CE /* imagetest.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,10 +86,18 @@
 		66B311A11BAE98000063B146 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		66B311A31BAE9AB60063B146 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		97DA118BE08D9EFC63DE1CF2 /* Pods-sadajura.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sadajura.release.xcconfig"; path = "Pods/Target Support Files/Pods-sadajura/Pods-sadajura.release.xcconfig"; sourceTree = "<group>"; };
+		D245C82F1BAE752D0072867D /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		D245C8311BAE786D0072867D /* ChatListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewCell.swift; sourceTree = "<group>"; };
+		D245C8341BAE92AF0072867D /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
+		D245C8351BAE92AF0072867D /* plain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plain.png; sourceTree = "<group>"; };
+		D245C8361BAE92AF0072867D /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		D245C83A1BAE93D20072867D /* FlightDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetailViewController.swift; sourceTree = "<group>"; };
+		D245C83C1BAE95360072867D /* SubmitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitViewController.swift; sourceTree = "<group>"; };
+		D245C83E1BAE95F80072867D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D245C8401BAE9BEC0072867D /* FlightDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetailTableViewCell.swift; sourceTree = "<group>"; };
 		D28272B61BAE4131003269CE /* RegisterFlightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterFlightViewController.swift; sourceTree = "<group>"; };
 		D28272BA1BAE5F19003269CE /* FriendTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTripViewController.swift; sourceTree = "<group>"; };
 		D28272BC1BAE6028003269CE /* FriendTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTripTableViewCell.swift; sourceTree = "<group>"; };
-		D28272BE1BAE6400003269CE /* imagetest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagetest.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,14 +161,20 @@
 		666336E41BAE3D9D00A2F559 /* sadajura2 */ = {
 			isa = PBXGroup;
 			children = (
+				D245C8331BAE8B420072867D /* icons */,
+				666336E91BAE3D9D00A2F559 /* Main.storyboard */,
 				666336E51BAE3D9D00A2F559 /* AppDelegate.swift */,
 				666336E71BAE3D9D00A2F559 /* ViewController.swift */,
 				D28272B61BAE4131003269CE /* RegisterFlightViewController.swift */,
 				D28272BA1BAE5F19003269CE /* FriendTripViewController.swift */,
-				666336E91BAE3D9D00A2F559 /* Main.storyboard */,
 				D28272BC1BAE6028003269CE /* FriendTripTableViewCell.swift */,
+				D245C83A1BAE93D20072867D /* FlightDetailViewController.swift */,
+				D245C8401BAE9BEC0072867D /* FlightDetailTableViewCell.swift */,
+				D245C82F1BAE752D0072867D /* ChatListViewController.swift */,
+				D245C8311BAE786D0072867D /* ChatListViewCell.swift */,
+				D245C83C1BAE95360072867D /* SubmitViewController.swift */,
+				D245C83E1BAE95F80072867D /* ProfileViewController.swift */,
 				666336EC1BAE3D9D00A2F559 /* Assets.xcassets */,
-				D28272BE1BAE6400003269CE /* imagetest.png */,
 				666336EE1BAE3D9D00A2F559 /* LaunchScreen.storyboard */,
 				666336F11BAE3D9D00A2F559 /* Info.plist */,
 				666337A51BAE464200A2F559 /* ChatViewController.swift */,
@@ -195,6 +217,16 @@
 				97DA118BE08D9EFC63DE1CF2 /* Pods-sadajura.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D245C8331BAE8B420072867D /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				D245C8341BAE92AF0072867D /* chat.png */,
+				D245C8351BAE92AF0072867D /* plain.png */,
+				D245C8361BAE92AF0072867D /* profile.png */,
+			);
+			name = icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,9 +337,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				666336F01BAE3D9D00A2F559 /* LaunchScreen.storyboard in Resources */,
+				D245C8381BAE92AF0072867D /* plain.png in Resources */,
 				666336ED1BAE3D9D00A2F559 /* Assets.xcassets in Resources */,
 				666336EB1BAE3D9D00A2F559 /* Main.storyboard in Resources */,
-				D28272BF1BAE6400003269CE /* imagetest.png in Resources */,
+				D245C8371BAE92AF0072867D /* chat.png in Resources */,
+				D245C8391BAE92AF0072867D /* profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,10 +423,16 @@
 				D28272BD1BAE6028003269CE /* FriendTripTableViewCell.swift in Sources */,
 				66B311A41BAE9AB60063B146 /* Request.swift in Sources */,
 				66A555FC1BAE715F00F63501 /* MyLoginViewController.swift in Sources */,
+				D245C83D1BAE95360072867D /* SubmitViewController.swift in Sources */,
+				D245C8411BAE9BEC0072867D /* FlightDetailTableViewCell.swift in Sources */,
+				D245C8321BAE786D0072867D /* ChatListViewCell.swift in Sources */,
 				666336E61BAE3D9D00A2F559 /* AppDelegate.swift in Sources */,
 				66A555FA1BAE700B00F63501 /* User.swift in Sources */,
 				66A555F81BAE6F4B00F63501 /* Message.swift in Sources */,
 				66A555F61BAE691500F63501 /* Constants.swift in Sources */,
+				D245C83B1BAE93D20072867D /* FlightDetailViewController.swift in Sources */,
+				D245C8301BAE752D0072867D /* ChatListViewController.swift in Sources */,
+				D245C83F1BAE95F80072867D /* ProfileViewController.swift in Sources */,
 				D28272BB1BAE5F19003269CE /* FriendTripViewController.swift in Sources */,
 				66B311A21BAE98000063B146 /* Flight.swift in Sources */,
 			);
