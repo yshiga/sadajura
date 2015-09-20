@@ -47,8 +47,6 @@ class FlightDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         
         userNameLabel.text = flight!.user!.username
-        
-        
         flight!.user!.profileImage?.getDataInBackgroundWithBlock({ (data, error) -> Void in
             if error == nil {
                 let image = UIImage(data: data!)
@@ -81,12 +79,23 @@ class FlightDetailViewController: UIViewController {
         let myLonDist : CLLocationDistance = 1000000
         let myRegion: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, myLatDist, myLonDist);
         mapView.setRegion(myRegion, animated: true)
+        
+        self.tableView.reloadData()
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func didRequestClick(sender: AnyObject) {
+        
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SubmitViewController") as! SubmitViewController
+        
+        vc.flight = self.flight!
+        self.navigationController?.presentViewController(vc, animated: true, completion: nil)
+        
+    }
 }
 
 extension FlightDetailViewController :UITableViewDelegate{

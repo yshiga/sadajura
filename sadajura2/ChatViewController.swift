@@ -193,8 +193,6 @@ extension ChatViewController : PhotoTweaksViewControllerDelegate {
             })
         }
 
-        
-
 }
 
 func photoTweaksControllerDidCancel(controller: PhotoTweaksViewController!) {
