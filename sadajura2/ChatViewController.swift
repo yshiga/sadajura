@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import JSQMessagesViewController
+import Parse
+import ParseUI
 
 class ChatViewController: JSQMessagesViewController{
     
@@ -40,6 +42,15 @@ class ChatViewController: JSQMessagesViewController{
         // message data
         // self.messages = [NSMutableArray array];
         setDummyData()
+       
+
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+         if User.currentUser() == nil {
+            openLoginView()
+        }       
     }
     
     private func setDummyData(){
@@ -94,4 +105,66 @@ class ChatViewController: JSQMessagesViewController{
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
     }
     
+    func openSignupView(){
+        
+        let signUpController = MySignUpViewController()
+        signUpController.delegate = self
+        signUpController.fields = ([PFSignUpFields.UsernameAndPassword, PFSignUpFields.SignUpButton, PFSignUpFields.Email, PFSignUpFields.DismissButton])
+       
+        self.navigationController?.presentViewController(signUpController, animated: true, completion: nil)
+        
+    }
+    
+    func openLoginView(){
+        
+        let logInController = MyLogInViewController()
+        logInController.delegate = self
+        logInController.fields = ([PFLogInFields.UsernameAndPassword, PFLogInFields.LogInButton, PFLogInFields.SignUpButton, PFLogInFields.PasswordForgotten, PFLogInFields.DismissButton])
+        
+        self.navigationController?.presentViewController(logInController, animated:true, completion: nil)
+        
+    }
+    
+}
+
+extension ChatViewController : PFSignUpViewControllerDelegate {
+    
+    func signUpViewController(signUpController: PFSignUpViewController, shouldBeginSignUp info: [NSObject : AnyObject]) -> Bool {
+        return true
+    }
+    
+    func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+        signUpController.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
+        signUpController.dismissViewControllerAnimated(true, completion: nil)
+        print(error?.localizedDescription)
+    }
+    
+    func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
+        
+    }
+}
+
+extension ChatViewController : PFLogInViewControllerDelegate  {
+    
+    func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
+        return true
+    }
+    
+    func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
+        logInController.dismissViewControllerAnimated(true, completion: nil)
+        
+        
+    }
+    
+    func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
+        print(error?.localizedDescription, terminator: "")
+    }
+    
+    func logInViewControllerDidCancelLogIn(logInController: PFLogInViewController) {
+        // do nothing
+    }
 }
