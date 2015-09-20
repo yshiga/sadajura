@@ -14,13 +14,17 @@ import ParseUI
 
 class ChatViewController: JSQMessagesViewController{
     
-    var messages = [JSQMessage]()
+    
+    let AVATOR_DIAMETER:UInt = 64
+    
+    var messages = [Message]()
     var incomingBubble :JSQMessagesBubbleImage?
     var outgoingBubble :JSQMessagesBubbleImage?
     var incomingAvatar :JSQMessagesAvatarImage?
     var outgoingAvatar :JSQMessagesAvatarImage?
     
-    let AVATOR_DIAMETER:UInt = 64
+    var receiver:User? // set by previous viewcontroller
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,32 +45,31 @@ class ChatViewController: JSQMessagesViewController{
         
         // message data
         // self.messages = [NSMutableArray array];
-        setDummyData()
-       
-
         
+        
+        // debug
+        receiver = User.currentUser()!
+       
     }
     
     override func viewDidAppear(animated: Bool) {
-         if User.currentUser() == nil {
+        if User.currentUser() == nil {
             openLoginView()
-        }       
+        } else {
+            self.senderId = User.currentUser()!.objectId
+            loadMessages()
+        }
     }
     
-    private func setDummyData(){
+    func loadMessages(){
         
-        let msg1 = JSQMessage.init(senderId: "1", displayName: "Yuichi", text: "text text text1")
-        messages.append(msg1)
+        Message.find(User.currentUser()!, user2:receiver!, block:{(messages,error)-> Void in
+            self.messages = messages
+            self.collectionView?.reloadData()
+        })
         
-        let msg2 = JSQMessage.init(senderId: "2", displayName: "Ichiki", text: "text text text2")
-        messages.append(msg2)
-        
-        let msg3 = JSQMessage.init(senderId: "2", displayName: "Ichiki", text: "text text text3")
-        messages.append(msg3)
-        
-        self.collectionView?.reloadData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -75,7 +78,7 @@ class ChatViewController: JSQMessagesViewController{
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
         
-        let message = self.messages[indexPath.item]
+        let message = self.messages[indexPath.item].convert2JSQMessage()
         if (message.senderId  == self.senderId) {
             return self.outgoingBubble
         }
@@ -88,7 +91,7 @@ class ChatViewController: JSQMessagesViewController{
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
         
-        let message = self.messages[indexPath.item]
+        let message = self.messages[indexPath.item].convert2JSQMessage()
         if (message.senderId  == self.senderId) {
             return self.outgoingAvatar
         }
@@ -97,12 +100,20 @@ class ChatViewController: JSQMessagesViewController{
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
         
-        return self.messages[indexPath.item]
+        return self.messages[indexPath.item].convert2JSQMessage()
         
     }
     
     // called when send button is clicked
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
+        
+        let user = User.currentUser()!
+        let message = Message(sender: user, receiver: receiver!, text: text, image: nil)
+        
+        message.saveInBackgroundWithBlock { (result, error) -> Void in
+            self.messages.append(message)
+            self.collectionView?.reloadData()
+        }
     }
     
     func openSignupView(){

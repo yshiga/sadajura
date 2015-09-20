@@ -8,6 +8,7 @@
 
 import Foundation
 import Parse
+import JSQMessagesViewController
 
 class Message: PFObject, PFSubclassing {
     
@@ -21,6 +22,17 @@ class Message: PFObject, PFSubclassing {
     private override init()
     {
         super.init()
+    }
+    
+    convenience init(sender:User, receiver:User, text:String, image:UIImage?) {
+        self.init()
+        self.sender = sender
+        self.receiver = receiver
+        self.text = text
+        
+        if image != nil {
+            self.setImageByUIImages(image!)
+        }
     }
     
     // must use
@@ -40,6 +52,30 @@ class Message: PFObject, PFSubclassing {
     
     public static func parseClassName() -> String {
         return "Message"
+    }
+    
+    class func find(user1:User, user2:User, block:(messages:[Message], error:NSError?)-> Void) {
+        
+        let query = PFQuery(className: Message.parseClassName())
+        query.cachePolicy = PFCachePolicy.NetworkElseCache
+        query.includeKey("sender")
+        query.orderByDescending("createdAt")
+        
+        query.findObjectsInBackgroundWithBlock({(objects, error) -> Void in
+            var messages = [Message]()
+            if error == nil {
+                messages = objects as! [Message]
+            } else {
+                print("\(error?.localizedDescription)", terminator: "")
+            }
+            block(messages: messages, error:error)
+        })
+        
+    }
+    
+    public func convert2JSQMessage()->JSQMessage {
+        let msg = JSQMessage.init(senderId: self.objectId, displayName:sender.username , text: self.text)
+        return msg
     }
     
     // MARK: - Private
