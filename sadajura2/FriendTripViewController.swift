@@ -53,6 +53,9 @@ extension FriendTripViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("FriendTripTableViewCell", forIndexPath: indexPath) as! FriendTripTableViewCell
         
         cell.userImage.image = UIImage(named: "yuichi")
+        cell.userImage.layer.cornerRadius = 25
+        cell.userImage.layer.masksToBounds = true
+
         
         if let flight = self.flights?[indexPath.row] {
             cell.userName.text = flight.user.username

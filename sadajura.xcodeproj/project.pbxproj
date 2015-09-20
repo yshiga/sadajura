@@ -40,6 +40,7 @@
 		D245C83F1BAE95F80072867D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C83E1BAE95F80072867D /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D245C8411BAE9BEC0072867D /* FlightDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C8401BAE9BEC0072867D /* FlightDetailTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D245C8431BAEB6080072867D /* NSDateISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C8421BAEB6080072867D /* NSDateISO8601.swift */; settings = {ASSET_TAGS = (); }; };
+		D245C8451BAECD280072867D /* to.png in Resources */ = {isa = PBXBuildFile; fileRef = D245C8441BAECD280072867D /* to.png */; settings = {ASSET_TAGS = (); }; };
 		D28272B81BAE4131003269CE /* RegisterFlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28272B61BAE4131003269CE /* RegisterFlightViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D28272BB1BAE5F19003269CE /* FriendTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28272BA1BAE5F19003269CE /* FriendTripViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D28272BD1BAE6028003269CE /* FriendTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28272BC1BAE6028003269CE /* FriendTripTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
@@ -105,6 +106,7 @@
 		D245C83E1BAE95F80072867D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D245C8401BAE9BEC0072867D /* FlightDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetailTableViewCell.swift; sourceTree = "<group>"; };
 		D245C8421BAEB6080072867D /* NSDateISO8601.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateISO8601.swift; sourceTree = "<group>"; };
+		D245C8441BAECD280072867D /* to.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = to.png; sourceTree = "<group>"; };
 		D28272B61BAE4131003269CE /* RegisterFlightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterFlightViewController.swift; sourceTree = "<group>"; };
 		D28272BA1BAE5F19003269CE /* FriendTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTripViewController.swift; sourceTree = "<group>"; };
 		D28272BC1BAE6028003269CE /* FriendTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTripTableViewCell.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		D245C8331BAE8B420072867D /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				D245C8441BAECD280072867D /* to.png */,
 				D245C8341BAE92AF0072867D /* chat.png */,
 				D245C8351BAE92AF0072867D /* plain.png */,
 				D245C8361BAE92AF0072867D /* profile.png */,
@@ -355,6 +358,7 @@
 				D245C8381BAE92AF0072867D /* plain.png in Resources */,
 				666336ED1BAE3D9D00A2F559 /* Assets.xcassets in Resources */,
 				666336EB1BAE3D9D00A2F559 /* Main.storyboard in Resources */,
+				D245C8451BAECD280072867D /* to.png in Resources */,
 				D245C8371BAE92AF0072867D /* chat.png in Resources */,
 				D245C8391BAE92AF0072867D /* profile.png in Resources */,
 			);

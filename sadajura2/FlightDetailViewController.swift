@@ -119,6 +119,7 @@ extension FlightDetailViewController :UITableViewDataSource{
             if error == nil {
                 let image = UIImage(data: data!)
                 cell.userImage.image = image
+                cell.userImage.layer.cornerRadius = 25
             }
         })
         
