@@ -8,28 +8,78 @@
 
 import UIKit
 import MapKit
+import ParseUI
+import DZNEmptyDataSet
 
 class FlightDetailViewController: UIViewController {
 
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var profileImage: PFImageView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var flight:Flight?
+    var requests:[Request] = [Request]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 中心点の緯度経度.
-        let myLat: CLLocationDegrees = 37.7815907
-        let myLon: CLLocationDegrees = -122.405511
+        // dummy
+        flight = Flight(user: User.currentUser()!, date: NSDate(), to: "Tokyo", from: "SF")
         
+        self.tableView.emptyDataSetSource = self;
+        self.tableView.emptyDataSetDelegate = self;
+        self.tableView.tableFooterView = UIView()
+    }
+    
+    
+    func fetchRequests() {
+        
+        Request.findByFlight(self.flight!, block:{(requests, error)->Void in
+            if error != nil {
+                self.requests = requests
+                self.tableView.reloadData()
+            }
+        })
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        userNameLabel.text = flight!.user!.username
+        
+        
+        flight!.user!.profileImage?.getDataInBackgroundWithBlock({ (data, error) -> Void in
+            if error == nil {
+                let image = UIImage(data: data!)
+                self.profileImage.image = image
+            }
+        })
+        
+
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        var myLat: CLLocationDegrees = 37.7815907
+        var myLon: CLLocationDegrees = -122.405511
+        
+        switch flight!.to! {
+            case "Tokyo":
+                myLat = 35.6833
+                myLon = 139.6833
+            case "Seoul":
+                myLat = 37.5667
+                myLon = 126.9667
+            default:
+                break
+        }
+
         let myCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(myLat, myLon)
-        
-        // 縮尺.
-        let myLatDist : CLLocationDistance = 100
-        let myLonDist : CLLocationDistance = 100
-        
-        // Regionを作成.
+        let myLatDist : CLLocationDistance = 1000000
+        let myLonDist : CLLocationDistance = 1000000
         let myRegion: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, myLatDist, myLonDist);
-        
-        // MapViewに反映.
         mapView.setRegion(myRegion, animated: true)
     }
 
@@ -51,16 +101,23 @@ extension FlightDetailViewController :UITableViewDataSource{
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.requests.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FlightDetailTableViewCell", forIndexPath: indexPath) as! FlightDetailTableViewCell
         
-        cell.userImage.image = UIImage(named: "yuichi")
-        cell.userName.text = "Yuichiki Shiga "
-        cell.travelRegion.text = "Osaka"
+        let request = self.requests[indexPath.row]
         
+        request.sender.profileImage?.getDataInBackgroundWithBlock({ (data, error) -> Void in
+            if error == nil {
+                let image = UIImage(data: data!)
+                cell.userImage.image = image
+            }
+        })
+        
+        cell.userName.text = request.sender!.username!
+        cell.travelRegion.text = request.product
         return cell
     }
 }
@@ -69,5 +126,13 @@ extension FlightDetailViewController :MKMapViewDelegate{
     //傾きが変更された時に呼び出されるメソッド.
     func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         //println("regionDidChangeAnimated")
+    }
+}
+
+extension FlightDetailViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
+{
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "no one has requested yet"
+        return NSAttributedString(string: text)
     }
 }

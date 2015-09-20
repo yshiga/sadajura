@@ -10,10 +10,24 @@ import Parse
 
 public class User: PFUser
 {
+    
+    @NSManaged public var profileImage: PFFile?
+    
     override init()
     {
         super.init()
         
+    }
+    
+    func setProfileImageByUIImage(image:UIImage){
+        self.profileImage = createPFFileByUIImage(image)
+    }
+    
+    // MARK: - Private
+    private func createPFFileByUIImage(image:UIImage)-> PFFile {
+        let imageData = UIImageJPEGRepresentation(image, 0.8)!
+        let file = PFFile(name: "image.jpg", data: imageData)
+        return file
     }
     
     override public class func initialize()

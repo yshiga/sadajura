@@ -25,8 +25,12 @@ class FriendTripViewController: UIViewController {
 
 extension FriendTripViewController :UITableViewDelegate{
     func tableView(tableView: UITableView,didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let vc = FlightDetailViewController()
-        self.presentViewController(vc, animated: true, completion: nil)
+
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("FlightDetailViewController") as!
+            FlightDetailViewController
+            
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 

@@ -80,6 +80,7 @@ extension InitialViewController: PFSignUpViewControllerDelegate {
     func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
         signUpController.dismissViewControllerAnimated(true, completion: nil)
         print(error?.localizedDescription)
+        MyAlertView.showErrorAlert(error!.localizedDescription)
     }
     
     func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
@@ -96,11 +97,11 @@ extension InitialViewController: PFLogInViewControllerDelegate  {
     func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
         logInController.dismissViewControllerAnimated(true, completion: nil)
         
-        
     }
     
     func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
         print(error?.localizedDescription, terminator: "")
+        MyAlertView.showErrorAlert(error!.localizedDescription)
     }
     
     func logInViewControllerDidCancelLogIn(logInController: PFLogInViewController) {

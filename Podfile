@@ -7,6 +7,8 @@ target 'sadajura' do
   pod 'PhotoTweaks'
   pod 'Parse'
   pod 'ParseUI'
+  pod 'SIAlertView'
+  pod 'DZNEmptyDataSet'
 end
 
 target 'sadajuraTests' do
