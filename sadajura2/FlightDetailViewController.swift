@@ -7,11 +7,30 @@
 //
 
 import UIKit
+import MapKit
 
 class FlightDetailViewController: UIViewController {
 
+    @IBOutlet var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 中心点の緯度経度.
+        let myLat: CLLocationDegrees = 37.7815907
+        let myLon: CLLocationDegrees = -122.405511
+        
+        let myCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(myLat, myLon)
+        
+        // 縮尺.
+        let myLatDist : CLLocationDistance = 100
+        let myLonDist : CLLocationDistance = 100
+        
+        // Regionを作成.
+        let myRegion: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(myCoordinate, myLatDist, myLonDist);
+        
+        // MapViewに反映.
+        mapView.setRegion(myRegion, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,47 +66,6 @@ extension FlightDetailViewController :UITableViewDataSource{
 }
 
 extension FlightDetailViewController :MKMapViewDelegate{
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        
-        // Identifier生成.
-        let myAnnotationIdentifier: NSString = "myAnnotation"
-        
-        // アノテーション生成.
-        var myAnnotationView: MKAnnotationView!
-        
-        if myAnnotationView == nil {
-            
-            myAnnotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: myAnnotationIdentifier as String)
-            
-            // アノテーションに画像を追加.
-            myAnnotationView.leftCalloutAccessoryView = UIImageView(image: UIImage(named: "gruMap-pin-icon.png"))
-            
-            //画面遷移用ボタン
-            let btn = UIButton(type: .DetailDisclosure)
-            myAnnotationView.rightCalloutAccessoryView = btn
-            
-            // アノテーションのコールアウトを許可.
-            myAnnotationView.canShowCallout = true
-        }
-        
-        // 画像を選択.
-        myAnnotationView.image = UIImage(named: "gruMap-pin-icon.png")!
-        myAnnotationView.annotation = annotation
-        
-        return myAnnotationView
-    }
-    
-    func mapView(mapView: MKMapView, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        //get tag here
-        if(annotationView.tag == 0){
-            //Do for 0 pin
-        }
-        
-        if control == annotationView.rightCalloutAccessoryView {
-            performSegueWithIdentifier("mapToShopDetail", sender: self)
-        }
-    }
-    
     //傾きが変更された時に呼び出されるメソッド.
     func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         //println("regionDidChangeAnimated")
