@@ -47,6 +47,8 @@ class Flight: PFObject, PFSubclassing {
     class func findOthers(block:(flights:[Flight], error:NSError?)-> Void) {
         let query = PFQuery(className: Flight.parseClassName())
         query.cachePolicy = PFCachePolicy.NetworkElseCache
+        
+        query.whereKey("user", notEqualTo: User.currentUser()!)
         query.includeKey("user")
         query.orderByDescending("createdAt")
         
