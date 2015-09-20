@@ -30,6 +30,7 @@
 		66B311A81BAEA6ED0063B146 /* MyTabberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B311A71BAEA6ED0063B146 /* MyTabberViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		66B311AA1BAEAFDF0063B146 /* MyAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B311A91BAEAFDF0063B146 /* MyAlertView.swift */; settings = {ASSET_TAGS = (); }; };
 		66B311AC1BAEB1360063B146 /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B311AB1BAEB1360063B146 /* UIColor+Util.swift */; settings = {ASSET_TAGS = (); }; };
+		66BFE6001BAEEB27005C7756 /* ProfileViewFlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BFE5FF1BAEEB27005C7756 /* ProfileViewFlightCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D245C8301BAE752D0072867D /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C82F1BAE752D0072867D /* ChatListViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D245C8321BAE786D0072867D /* ChatListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C8311BAE786D0072867D /* ChatListViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D245C8371BAE92AF0072867D /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = D245C8341BAE92AF0072867D /* chat.png */; settings = {ASSET_TAGS = (); }; };
@@ -95,6 +96,7 @@
 		66B311A71BAEA6ED0063B146 /* MyTabberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabberViewController.swift; sourceTree = "<group>"; };
 		66B311A91BAEAFDF0063B146 /* MyAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAlertView.swift; sourceTree = "<group>"; };
 		66B311AB1BAEB1360063B146 /* UIColor+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
+		66BFE5FF1BAEEB27005C7756 /* ProfileViewFlightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewFlightCell.swift; sourceTree = "<group>"; };
 		97DA118BE08D9EFC63DE1CF2 /* Pods-sadajura.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sadajura.release.xcconfig"; path = "Pods/Target Support Files/Pods-sadajura/Pods-sadajura.release.xcconfig"; sourceTree = "<group>"; };
 		D245C82F1BAE752D0072867D /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		D245C8311BAE786D0072867D /* ChatListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewCell.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				D245C8311BAE786D0072867D /* ChatListViewCell.swift */,
 				D245C83C1BAE95360072867D /* SubmitViewController.swift */,
 				D245C83E1BAE95F80072867D /* ProfileViewController.swift */,
+				66BFE5FF1BAEEB27005C7756 /* ProfileViewFlightCell.swift */,
 				666336EC1BAE3D9D00A2F559 /* Assets.xcassets */,
 				666336EE1BAE3D9D00A2F559 /* LaunchScreen.storyboard */,
 				666336F11BAE3D9D00A2F559 /* Info.plist */,
@@ -439,6 +442,7 @@
 				D28272B81BAE4131003269CE /* RegisterFlightViewController.swift in Sources */,
 				66A555FE1BAE718600F63501 /* MySignupViewController.swift in Sources */,
 				66B311A01BAE96730063B146 /* UIImage+Resize.swift in Sources */,
+				66BFE6001BAEEB27005C7756 /* ProfileViewFlightCell.swift in Sources */,
 				66B311AC1BAEB1360063B146 /* UIColor+Util.swift in Sources */,
 				D28272BD1BAE6028003269CE /* FriendTripTableViewCell.swift in Sources */,
 				66B311A81BAEA6ED0063B146 /* MyTabberViewController.swift in Sources */,
