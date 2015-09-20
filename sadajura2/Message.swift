@@ -16,7 +16,9 @@ class Message: PFObject, PFSubclassing {
     @NSManaged public var text: String!
     @NSManaged public var sender: User!
     @NSManaged public var receiver: User!
-    @NSManaged public var image: PFFile
+    @NSManaged public var image: PFFile?
+    
+    var originalImage:UIImage?
     
     // MARK: - Initialize
     private override init()
@@ -37,7 +39,8 @@ class Message: PFObject, PFSubclassing {
     
     // must use
     func setImageByUIImages(image:UIImage) {
-        self.image = createPFFileByUIImage(image)
+        self.image = createPFFileByUIImage(image.resizeM())
+        self.originalImage  = image.resizeM()
     }
     
     // MARK: - PFSubclassing
@@ -58,8 +61,12 @@ class Message: PFObject, PFSubclassing {
         
         let query = PFQuery(className: Message.parseClassName())
         query.cachePolicy = PFCachePolicy.NetworkElseCache
+        query.whereKey("sender", containedIn: [user1,user2])
+        query.whereKey("receiver", containedIn: [user1,user2])
+        
         query.includeKey("sender")
-        query.orderByDescending("createdAt")
+        query.orderByAscending("createdAt")
+        
         
         query.findObjectsInBackgroundWithBlock({(objects, error) -> Void in
             var messages = [Message]()
@@ -73,10 +80,7 @@ class Message: PFObject, PFSubclassing {
         
     }
     
-    public func convert2JSQMessage()->JSQMessage {
-        let msg = JSQMessage.init(senderId: self.objectId, displayName:sender.username , text: self.text)
-        return msg
-    }
+
     
     // MARK: - Private
     private func createPFFileByUIImage(image:UIImage)-> PFFile {

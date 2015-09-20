@@ -8,11 +8,13 @@ PODS:
   - ParseUI (1.1.6):
     - Bolts/Tasks (~> 1.2)
     - Parse (~> 1.8)
+  - PhotoTweaks (1.0.2)
 
 DEPENDENCIES:
   - JSQMessagesViewController
   - Parse
   - ParseUI
+  - PhotoTweaks
 
 SPEC CHECKSUMS:
   Bolts: 20a2bd788273360cb1e31530dc19b8544eef2544
@@ -20,5 +22,6 @@ SPEC CHECKSUMS:
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   Parse: 17ad8e0677ed682f7f00503860fcda0f4eb74168
   ParseUI: 8a22e448c03f825203d8c379c80523517f68baa3
+  PhotoTweaks: e91ce097f9df435049e7c35d419f9a7749e252bc
 
 COCOAPODS: 0.38.2

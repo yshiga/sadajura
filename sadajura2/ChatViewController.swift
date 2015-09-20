@@ -11,13 +11,14 @@ import UIKit
 import JSQMessagesViewController
 import Parse
 import ParseUI
+import PhotoTweaks
 
 class ChatViewController: JSQMessagesViewController{
     
     
     let AVATOR_DIAMETER:UInt = 64
     
-    var messages = [Message]()
+    var messages = [JSQMessage]()
     var incomingBubble :JSQMessagesBubbleImage?
     var outgoingBubble :JSQMessagesBubbleImage?
     var incomingAvatar :JSQMessagesAvatarImage?
@@ -25,6 +26,7 @@ class ChatViewController: JSQMessagesViewController{
     
     var receiver:User? // set by previous viewcontroller
     
+    var imagePicker :UIImagePickerController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +66,34 @@ class ChatViewController: JSQMessagesViewController{
     func loadMessages(){
         
         Message.find(User.currentUser()!, user2:receiver!, block:{(messages,error)-> Void in
-            self.messages = messages
+            
+            
+            self.messages.removeAll()
+            for msg in messages {
+                var jsqMessage :JSQMessage
+                if msg.image == nil {
+                    jsqMessage  = JSQMessage.init(senderId: msg.sender.objectId, displayName: msg.sender.username, text:msg.text)
+                } else {
+            
+                    var mediaItem = JSQPhotoMediaItem(image: nil)
+                    var isOutgoing = self.senderId == msg.sender.objectId
+                    mediaItem.appliesMediaViewMaskAsOutgoing = isOutgoing;
+                    
+                    jsqMessage = JSQMessage.init(senderId: msg.sender.objectId, displayName: msg.sender.username, media: mediaItem)
+                    
+                    msg.image?.getDataInBackgroundWithBlock({ (data, error) -> Void in
+                        
+                        if (error == nil) {
+                            mediaItem.image = UIImage(data:data!)
+                            self.collectionView?.reloadData()
+                            
+                        }
+                    })
+                }
+                
+                self.messages.append(jsqMessage)
+            }
+            
             self.collectionView?.reloadData()
         })
         
@@ -75,11 +104,10 @@ class ChatViewController: JSQMessagesViewController{
         // Dispose of any resources that can be recreated.
     }
     
-    
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
         
-        let message = self.messages[indexPath.item].convert2JSQMessage()
-        if (message.senderId  == self.senderId) {
+        let jsqMessage = self.messages[indexPath.item]
+        if (jsqMessage.senderId  == self.senderId) {
             return self.outgoingBubble
         }
         return self.incomingBubble
@@ -91,8 +119,8 @@ class ChatViewController: JSQMessagesViewController{
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
         
-        let message = self.messages[indexPath.item].convert2JSQMessage()
-        if (message.senderId  == self.senderId) {
+        let jsqMessage = self.messages[indexPath.item]
+        if (jsqMessage.senderId  == self.senderId) {
             return self.outgoingAvatar
         }
         return self.incomingAvatar
@@ -100,7 +128,7 @@ class ChatViewController: JSQMessagesViewController{
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
         
-        return self.messages[indexPath.item].convert2JSQMessage()
+        return self.messages[indexPath.item]
         
     }
     
@@ -111,9 +139,14 @@ class ChatViewController: JSQMessagesViewController{
         let message = Message(sender: user, receiver: receiver!, text: text, image: nil)
         
         message.saveInBackgroundWithBlock { (result, error) -> Void in
-            self.messages.append(message)
+            self.messages.append(JSQMessage.init(senderId: message.sender.objectId, displayName: message.sender.username, text:message.text))
             self.collectionView?.reloadData()
+            self.finishSendingMessageAnimated(true)
         }
+    }
+    
+    override func didPressAccessoryButton(sender: UIButton!) {
+        presentCamera()
     }
     
     func openSignupView(){
@@ -134,6 +167,15 @@ class ChatViewController: JSQMessagesViewController{
         
         self.navigationController?.presentViewController(logInController, animated:true, completion: nil)
         
+    }
+    
+    
+    func presentCamera() {
+        self.imagePicker = UIImagePickerController()
+//        self.imagePicker!.allowsEditing = true
+        self.imagePicker!.delegate = self
+        self.imagePicker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        self.presentViewController(self.imagePicker!, animated: true, completion: nil)
     }
     
 }
@@ -177,5 +219,50 @@ extension ChatViewController : PFLogInViewControllerDelegate  {
     
     func logInViewControllerDidCancelLogIn(logInController: PFLogInViewController) {
         // do nothing
+    }
+}
+
+
+extension ChatViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate
+{
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
+    {
+        let image: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        
+        let photoTweaksViewController = PhotoTweaksViewController(image: image)
+        photoTweaksViewController.delegate = self
+        picker.presentViewController(photoTweaksViewController, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+extension ChatViewController : PhotoTweaksViewControllerDelegate {
+    func photoTweaksController(controller: PhotoTweaksViewController!, didFinishWithCroppedImage croppedImage: UIImage!) {
+        
+        let message = Message(sender: User.currentUser()!, receiver:receiver!, text:"", image: croppedImage)
+        message.saveInBackgroundWithBlock { (result, error) -> Void in
+            
+            
+        let mediaItem = JSQPhotoMediaItem(image: croppedImage)
+        mediaItem.appliesMediaViewMaskAsOutgoing = true
+        self.messages.append(JSQMessage.init(senderId: User.currentUser()?.objectId, displayName: User.currentUser()?.username, media: mediaItem))
+        self.collectionView?.reloadData()
+            controller.dismissViewControllerAnimated(true, completion:{
+                self.imagePicker!.dismissViewControllerAnimated(false, completion: nil)
+            })
+        }
+
+        
+
+}
+
+func photoTweaksControllerDidCancel(controller: PhotoTweaksViewController!) {
+    controller.dismissViewControllerAnimated(true, completion: {
+            self.imagePicker!.dismissViewControllerAnimated(false, completion: nil)
+        });
     }
 }
