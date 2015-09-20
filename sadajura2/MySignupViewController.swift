@@ -17,8 +17,10 @@ class MySignUpViewController : PFSignUpViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let logoView = UIImageView(image: UIImage(named: "logo.png"))
+//        self.signUpView.logo = logoView // 'logo' can be any UIView
+        
         //        self.view.backgroundColor = UIColor.darkGrayColor()
-        //        let logoView = UIImageView(image: UIImage(named: "logo.png"))
-        //        self.signUpView.logo = logoView // 'logo' can be any UIView
+
     }
 }

@@ -17,12 +17,16 @@ class ProfileViewController: UIViewController {
     
     var flights = [Flight]()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        profileImage.layer.cornerRadius =  profileImage.frame.width / 2
+        profileImage.layer.masksToBounds = true
+        
+        userNameLabe.text = User.currentUser()!.username
         
         func initNavBar() {
             
@@ -40,6 +44,8 @@ class ProfileViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        profileImage.file = User.currentUser()!.profileImage
+        profileImage.loadInBackground()
         fetchFlights()
     }
 
@@ -58,6 +64,9 @@ class ProfileViewController: UIViewController {
         
     }
     
+    @IBAction func didLogoutClick(sender: AnyObject) {
+        User.logOut()
+    }
     @IBAction func didCreateClick(sender: AnyObject) {
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("RegisterFlightViewController") as! RegisterFlightViewController
         self.navigationController?.presentViewController(vc, animated: true, completion: nil)

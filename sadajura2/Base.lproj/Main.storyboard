@@ -411,14 +411,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dqU-Ki-fiN">
-                                <rect key="frame" x="134" y="81" width="131" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="didCreateClick:" destination="WQB-vA-AMI" eventType="touchUpInside" id="CMQ-Jt-p4k"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" id="IHE-3V-jHQ">
                                 <rect key="frame" x="0.0" y="146" width="320" height="372"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -454,12 +446,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dqU-Ki-fiN">
+                                <rect key="frame" x="134" y="81" width="131" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didCreateClick:" destination="WQB-vA-AMI" eventType="touchUpInside" id="CMQ-Jt-p4k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile.png" id="AJP-le-KIS"/>
-                    <navigationItem key="navigationItem" id="FCl-yt-fjb"/>
+                    <navigationItem key="navigationItem" id="FCl-yt-fjb">
+                        <barButtonItem key="rightBarButtonItem" title="logout" id="gmS-Gg-jm8">
+                            <connections>
+                                <action selector="didLogoutClick:" destination="WQB-vA-AMI" id="d29-3R-aRh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="profileImage" destination="b4U-Oo-9Qa" id="liH-TV-oiG"/>
