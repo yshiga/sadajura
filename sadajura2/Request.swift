@@ -67,7 +67,7 @@ class Request: PFObject, PFSubclassing {
         let query = PFQuery(className: Request.parseClassName(), predicate:predicate)
         query.cachePolicy = PFCachePolicy.NetworkElseCache
         
-        query.includeKey("sender")
+        query.includeKey("sender,receiver")
         query.orderByDescending("createdAt")
         
         query.findObjectsInBackgroundWithBlock({(objects, error) -> Void in

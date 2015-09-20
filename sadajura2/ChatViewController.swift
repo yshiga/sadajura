@@ -50,8 +50,7 @@ class ChatViewController: JSQMessagesViewController{
         self.outgoingBubble = bubbleFactory.outgoingMessagesBubbleImageWithColor(UIColor.jsq_messageBubbleGreenColor())
         
         // set avators
-        self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named:"ichiki"), diameter: AVATOR_DIAMETER)
-        self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named:"yuichi"), diameter: AVATOR_DIAMETER)
+
         
         // message data
         // self.messages = [NSMutableArray array];
@@ -63,6 +62,22 @@ class ChatViewController: JSQMessagesViewController{
         } else {
             self.receiver = request!.receiver
         }
+        
+        self.receiver!.profileImage!.getDataInBackgroundWithBlock({ (data, error) -> Void in
+            if error == nil {
+                let image = UIImage(data:data!)
+                self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(image, diameter:self.AVATOR_DIAMETER)
+            }
+        })
+        
+        self.sender!.profileImage!.getDataInBackgroundWithBlock({ (data, error) -> Void in
+            if error == nil {
+                let image = UIImage(data:data!)
+                self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(image, diameter: self.AVATOR_DIAMETER)
+            }
+        })
+        
+        
         
         self.senderId = User.currentUser()!.objectId
         self.senderDisplayName = User.currentUser()!.username
@@ -195,7 +210,6 @@ class ChatViewController: JSQMessagesViewController{
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
         
         let message = Message(request:self.request!, sender: self.sender!, receiver: self.receiver!, text: text, image: nil)
-        
         message.saveInBackgroundWithBlock { (result, error) -> Void in
             self.messages.append(JSQMessage.init(senderId: message.sender.objectId, displayName: message.sender.username, text:message.text))
             self.collectionView?.reloadData()
@@ -203,8 +217,40 @@ class ChatViewController: JSQMessagesViewController{
         }
     }
     
+    
+    
+    func presentMasterCardView(){
+        
+    }
+    
     override func didPressAccessoryButton(sender: UIButton!) {
-        presentCamera()
+        
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
+        
+        // 2
+        let deleteAction = UIAlertAction(title: "Choose photo", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.presentCamera()
+        })
+        let saveAction = UIAlertAction(title: "Pay", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.presentMasterCardView()
+            
+        })
+        
+        //
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+        })
+        
+        
+        // 4
+        optionMenu.addAction(deleteAction)
+        optionMenu.addAction(saveAction)
+        optionMenu.addAction(cancelAction)
+        
+        // 5
+        self.presentViewController(optionMenu, animated: true, completion: nil)
     }
     
     func presentCamera() {
@@ -239,7 +285,6 @@ extension ChatViewController : PhotoTweaksViewControllerDelegate {
         
         let message = Message(request:self.request!, sender: self.sender!, receiver:self.receiver!, text:"", image: croppedImage)
         message.saveInBackgroundWithBlock { (result, error) -> Void in
-            
             
         let mediaItem = JSQPhotoMediaItem(image: croppedImage)
         mediaItem.appliesMediaViewMaskAsOutgoing = true
