@@ -27,6 +27,8 @@ class Message: PFObject, PFSubclassing {
     
     convenience init(request:Request, sender:User, receiver:User, text:String, image:UIImage?) {
         self.init()
+        
+        self.request = request
         self.sender = sender
         self.receiver = receiver
         self.text = text

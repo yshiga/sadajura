@@ -61,25 +61,71 @@ class ChatViewController: JSQMessagesViewController{
         self.senderId = User.currentUser()!.objectId
         self.senderDisplayName = User.currentUser()!.username
         
+        resetMessages()
+        
+//        let timer = NSTimer(timeInterval: 5, target:self , selector: "loadMessages:", userInfo: nil, repeats: true)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         loadMessages()
     }
+
+    func resetMessages(){
+        
+        self.messages.removeAll()
+        
+        
+        let requestSenderId = self.request!.sender.objectId
+        let requestSenderName = self.request!.sender.username
+        
+        let requestProduct = self.request!.product
+        let requestText = self.request!.desc
+        
+        if self.request?.sender.objectId == User.currentUser()!.objectId {
+        }
+        
+        let jsqMessage1 = JSQMessage.init(senderId: requestSenderId, displayName: requestSenderName, text:"Can you buy " + requestProduct)
+        self.messages.append(jsqMessage1)
+
+        if requestText != "" {
+            let jsqMessage2 = JSQMessage.init(senderId: requestSenderId, displayName: requestSenderName, text:requestText)
+            self.messages.append(jsqMessage2)
+        }
+        
+        if self.request!.image != nil {
+           
+            let mediaItem = JSQPhotoMediaItem(image: nil)
+            let isOutgoing = self.senderId == requestSenderId
+            mediaItem.appliesMediaViewMaskAsOutgoing = isOutgoing;
+            
+            let jsqMessage3 = JSQMessage.init(senderId: requestSenderId, displayName: requestSenderName, media: mediaItem)
+            
+            self.request!.image!.getDataInBackgroundWithBlock({ (data, error) -> Void in
+                
+                if (error == nil) {
+                    mediaItem.image = UIImage(data:data!)
+                    self.collectionView?.reloadData()
+                }
+            })
+            
+            self.messages.append(jsqMessage3)
+        }
+    }
     
     func loadMessages(){
         
         Message.findByRequest(self.request!, block:{(messages,error)-> Void in
+            self.resetMessages()
             
-            self.messages.removeAll()
             for msg in messages {
                 var jsqMessage :JSQMessage
                 if msg.image == nil {
                     jsqMessage  = JSQMessage.init(senderId: msg.sender.objectId, displayName: msg.sender.username, text:msg.text)
                 } else {
             
-                    var mediaItem = JSQPhotoMediaItem(image: nil)
-                    var isOutgoing = self.senderId == msg.sender.objectId
+                    let mediaItem = JSQPhotoMediaItem(image: nil)
+                    let isOutgoing = self.senderId == msg.sender.objectId
                     mediaItem.appliesMediaViewMaskAsOutgoing = isOutgoing;
                     
                     jsqMessage = JSQMessage.init(senderId: msg.sender.objectId, displayName: msg.sender.username, media: mediaItem)
@@ -162,9 +208,6 @@ class ChatViewController: JSQMessagesViewController{
     }
     
 }
-
-
-
 
 extension ChatViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
