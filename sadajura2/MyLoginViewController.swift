@@ -15,6 +15,8 @@ class MyLogInViewController : PFLogInViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let logoView = UIImageView(image: UIImage(named: "logo"))
+        self.logInView!.logo = logoView // 'logo' can be any UIView
         
         self.logInView!.usernameField!.placeholder = "user name"
     }
