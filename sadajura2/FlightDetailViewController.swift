@@ -17,6 +17,9 @@ class FlightDetailViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var profileImage: PFImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var toTextLabel: UILabel!
+    @IBOutlet var dateTextLabel: UILabel!
+    @IBOutlet var fromTextLabel: UILabel!
     
     var flight:Flight?
     var requests:[Request] = [Request]()
@@ -44,6 +47,9 @@ class FlightDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         
         userNameLabel.text = flight!.user!.username
+        //dateTextLabel.text = NSDate.ISOStringFromDate(flight!.date)
+        fromTextLabel.text = flight!.from
+        toTextLabel.text = flight!.to
         flight!.user!.profileImage?.getDataInBackgroundWithBlock({ (data, error) -> Void in
             if error == nil {
                 let image = UIImage(data: data!)
