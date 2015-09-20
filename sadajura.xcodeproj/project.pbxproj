@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3ED379F05B35162B5E7C55C1 /* libPods-sadajura.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC427D8B7A2FD34BCADB6C52 /* libPods-sadajura.a */; };
+		1D8100D497A0CED36DFDA07E /* Pods_sadajura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2103C20965228A08006AA0AE /* Pods_sadajura.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		666336E61BAE3D9D00A2F559 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666336E51BAE3D9D00A2F559 /* AppDelegate.swift */; };
 		666336E81BAE3D9D00A2F559 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666336E71BAE3D9D00A2F559 /* ViewController.swift */; };
 		666336EB1BAE3D9D00A2F559 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666336E91BAE3D9D00A2F559 /* Main.storyboard */; };
@@ -17,6 +17,7 @@
 		666337061BAE3D9D00A2F559 /* sadajura2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666337051BAE3D9D00A2F559 /* sadajura2UITests.swift */; };
 		666337A61BAE464200A2F559 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666337A51BAE464200A2F559 /* ChatViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		66A5555C1BAE589100F63501 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A5555B1BAE589100F63501 /* AudioToolbox.framework */; };
+		66A555F61BAE691500F63501 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A555F51BAE691500F63501 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		0D01E0840D4B46864BC195D9 /* Pods-sadajura.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sadajura.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sadajura/Pods-sadajura.debug.xcconfig"; sourceTree = "<group>"; };
+		2103C20965228A08006AA0AE /* Pods_sadajura.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sadajura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		666336E21BAE3D9D00A2F559 /* sadajura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sadajura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		666336E51BAE3D9D00A2F559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		666336E71BAE3D9D00A2F559 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,8 +56,8 @@
 		666337A51BAE464200A2F559 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		66A5555B1BAE589100F63501 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		66A5555D1BAE595900F63501 /* sadajura-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sadajura-Bridging-Header.h"; sourceTree = "<group>"; };
+		66A555F51BAE691500F63501 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		97DA118BE08D9EFC63DE1CF2 /* Pods-sadajura.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sadajura.release.xcconfig"; path = "Pods/Target Support Files/Pods-sadajura/Pods-sadajura.release.xcconfig"; sourceTree = "<group>"; };
-		AC427D8B7A2FD34BCADB6C52 /* libPods-sadajura.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sadajura.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66A5555C1BAE589100F63501 /* AudioToolbox.framework in Frameworks */,
-				3ED379F05B35162B5E7C55C1 /* libPods-sadajura.a in Frameworks */,
+				1D8100D497A0CED36DFDA07E /* Pods_sadajura.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +90,7 @@
 		4041840CCE92B1E58F79CDB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AC427D8B7A2FD34BCADB6C52 /* libPods-sadajura.a */,
+				2103C20965228A08006AA0AE /* Pods_sadajura.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,6 +129,7 @@
 				666336F11BAE3D9D00A2F559 /* Info.plist */,
 				666337A51BAE464200A2F559 /* ChatViewController.swift */,
 				66A5555D1BAE595900F63501 /* sadajura-Bridging-Header.h */,
+				66A555F51BAE691500F63501 /* Constants.swift */,
 			);
 			path = sadajura2;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				666336DF1BAE3D9D00A2F559 /* Frameworks */,
 				666336E01BAE3D9D00A2F559 /* Resources */,
 				133346F6325B8B9CD4ACBD28 /* Copy Pods Resources */,
+				44D5EAE3E44FAFA0E8720196 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -302,6 +306,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sadajura/Pods-sadajura-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		44D5EAE3E44FAFA0E8720196 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sadajura/Pods-sadajura-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		566816B04629497A2E6BE6A0 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -327,6 +346,7 @@
 				666336E81BAE3D9D00A2F559 /* ViewController.swift in Sources */,
 				666337A61BAE464200A2F559 /* ChatViewController.swift in Sources */,
 				666336E61BAE3D9D00A2F559 /* AppDelegate.swift in Sources */,
+				66A555F61BAE691500F63501 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
