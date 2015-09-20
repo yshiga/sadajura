@@ -13,8 +13,9 @@ import Parse
 import ParseUI
 import PhotoTweaks
 
-class ChatViewController: JSQMessagesViewController{
-    
+class ChatViewController: JSQMessagesViewController, SIMChargeCardViewControllerDelegate{
+   
+    var chargeVC :SIMChargeCardViewController = SIMChargeCardViewController(publicKey: "1234")
     
     let AVATOR_DIAMETER:UInt = 64
     
@@ -31,8 +32,20 @@ class ChatViewController: JSQMessagesViewController{
     
     var imagePicker :UIImagePickerController?
     
+    func creditCardTokenProcessed(token: SIMCreditCardToken!) {
+    }
+    
+    func creditCardTokenFailedWithError(error: NSError!) {
+    }
+    
+    func chargeCardCancelled() {
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        chargeVC.delegate = self
         
         // properties of super class
         self.collectionView!.collectionViewLayout.springinessEnabled = true
@@ -220,7 +233,7 @@ class ChatViewController: JSQMessagesViewController{
     
     
     func presentMasterCardView(){
-        
+        self.navigationController?.presentViewController(chargeVC, animated: true, completion: nil)
     }
     
     override func didPressAccessoryButton(sender: UIButton!) {

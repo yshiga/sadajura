@@ -6,3 +6,4 @@
 #import <PhotoTweaks/PhotoTweakView.h>
 #import <SIAlertView/SIAlertView.h>
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+#import <Simplify/SIMChargeCardViewController.h>

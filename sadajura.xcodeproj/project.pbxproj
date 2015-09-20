@@ -31,6 +31,10 @@
 		66B311AA1BAEAFDF0063B146 /* MyAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B311A91BAEAFDF0063B146 /* MyAlertView.swift */; settings = {ASSET_TAGS = (); }; };
 		66B311AC1BAEB1360063B146 /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B311AB1BAEB1360063B146 /* UIColor+Util.swift */; settings = {ASSET_TAGS = (); }; };
 		66BFE6001BAEEB27005C7756 /* ProfileViewFlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BFE5FF1BAEEB27005C7756 /* ProfileViewFlightCell.swift */; settings = {ASSET_TAGS = (); }; };
+		D24134811BAF135900550F9F /* Simplify.bundle in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = D241347F1BAF135900550F9F /* Simplify.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D24134821BAF135900550F9F /* Simplify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D24134801BAF135900550F9F /* Simplify.framework */; };
+		D24134831BAF135900550F9F /* Simplify.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D24134801BAF135900550F9F /* Simplify.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D24134871BAF13B600550F9F /* SIMProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24134861BAF13B600550F9F /* SIMProductViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D245C8301BAE752D0072867D /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C82F1BAE752D0072867D /* ChatListViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D245C8321BAE786D0072867D /* ChatListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C8311BAE786D0072867D /* ChatListViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D245C8371BAE92AF0072867D /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = D245C8341BAE92AF0072867D /* chat.png */; settings = {ASSET_TAGS = (); }; };
@@ -63,6 +67,31 @@
 			remoteInfo = sadajura2;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D24134841BAF135A00550F9F /* Embed PlugIns */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D24134811BAF135900550F9F /* Simplify.bundle in Embed PlugIns */,
+			);
+			name = "Embed PlugIns";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D24134851BAF135A00550F9F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D24134831BAF135900550F9F /* Simplify.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0D01E0840D4B46864BC195D9 /* Pods-sadajura.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sadajura.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sadajura/Pods-sadajura.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +127,9 @@
 		66B311AB1BAEB1360063B146 /* UIColor+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
 		66BFE5FF1BAEEB27005C7756 /* ProfileViewFlightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewFlightCell.swift; sourceTree = "<group>"; };
 		97DA118BE08D9EFC63DE1CF2 /* Pods-sadajura.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sadajura.release.xcconfig"; path = "Pods/Target Support Files/Pods-sadajura/Pods-sadajura.release.xcconfig"; sourceTree = "<group>"; };
+		D241347F1BAF135900550F9F /* Simplify.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Simplify.bundle; sourceTree = "<group>"; };
+		D24134801BAF135900550F9F /* Simplify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Simplify.framework; sourceTree = "<group>"; };
+		D24134861BAF13B600550F9F /* SIMProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIMProductViewController.swift; sourceTree = "<group>"; };
 		D245C82F1BAE752D0072867D /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		D245C8311BAE786D0072867D /* ChatListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewCell.swift; sourceTree = "<group>"; };
 		D245C8341BAE92AF0072867D /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
@@ -119,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D24134821BAF135900550F9F /* Simplify.framework in Frameworks */,
 				66A5555C1BAE589100F63501 /* AudioToolbox.framework in Frameworks */,
 				1D8100D497A0CED36DFDA07E /* Pods_sadajura.framework in Frameworks */,
 			);
@@ -152,6 +185,8 @@
 		666336D91BAE3D9D00A2F559 = {
 			isa = PBXGroup;
 			children = (
+				D241347F1BAF135900550F9F /* Simplify.bundle */,
+				D24134801BAF135900550F9F /* Simplify.framework */,
 				66A5555B1BAE589100F63501 /* AudioToolbox.framework */,
 				666336E41BAE3D9D00A2F559 /* sadajura2 */,
 				666336F91BAE3D9D00A2F559 /* sadajura2Tests */,
@@ -190,6 +225,7 @@
 				D245C83C1BAE95360072867D /* SubmitViewController.swift */,
 				D245C83E1BAE95F80072867D /* ProfileViewController.swift */,
 				66BFE5FF1BAEEB27005C7756 /* ProfileViewFlightCell.swift */,
+				D24134861BAF13B600550F9F /* SIMProductViewController.swift */,
 				666336EC1BAE3D9D00A2F559 /* Assets.xcassets */,
 				666336EE1BAE3D9D00A2F559 /* LaunchScreen.storyboard */,
 				666336F11BAE3D9D00A2F559 /* Info.plist */,
@@ -263,6 +299,8 @@
 				666336E01BAE3D9D00A2F559 /* Resources */,
 				133346F6325B8B9CD4ACBD28 /* Copy Pods Resources */,
 				44D5EAE3E44FAFA0E8720196 /* Embed Pods Frameworks */,
+				D24134841BAF135A00550F9F /* Embed PlugIns */,
+				D24134851BAF135A00550F9F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -446,6 +484,7 @@
 				66B311AC1BAEB1360063B146 /* UIColor+Util.swift in Sources */,
 				D28272BD1BAE6028003269CE /* FriendTripTableViewCell.swift in Sources */,
 				66B311A81BAEA6ED0063B146 /* MyTabberViewController.swift in Sources */,
+				D24134871BAF13B600550F9F /* SIMProductViewController.swift in Sources */,
 				66B311A41BAE9AB60063B146 /* Request.swift in Sources */,
 				66A555FC1BAE715F00F63501 /* MyLoginViewController.swift in Sources */,
 				D245C83D1BAE95360072867D /* SubmitViewController.swift in Sources */,
@@ -604,6 +643,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = sadajura2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.whomentors.sadajura;
@@ -619,6 +662,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = sadajura2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.whomentors.sadajura;
