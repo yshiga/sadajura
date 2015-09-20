@@ -30,6 +30,9 @@ class FlightDetailViewController: UIViewController {
         self.tableView.emptyDataSetSource = self;
         self.tableView.emptyDataSetDelegate = self;
         self.tableView.tableFooterView = UIView()
+        
+        profileImage.layer.cornerRadius = profileImage.frame.width / 2
+        profileImage.layer.masksToBounds = true
     }
     
     
@@ -125,7 +128,8 @@ extension FlightDetailViewController :UITableViewDataSource{
             if error == nil {
                 let image = UIImage(data: data!)
                 cell.userImage.image = image
-                cell.userImage.layer.cornerRadius = 25
+                cell.userImage.layer.cornerRadius = cell.userImage.frame.width / 2
+                cell.userImage.layer.masksToBounds = true
             }
         })
         
