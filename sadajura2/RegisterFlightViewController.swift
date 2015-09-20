@@ -28,9 +28,15 @@ class RegisterFlightViewController: UIViewController {
         super.viewDidLoad()
         
         myDatePicker = UIDatePicker()
+        myDatePicker.addTarget(self, action: "onDatePickerValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
+
+
+        
         myUIPicker = UIPickerView()
         
+        
         myDatePicker.datePickerMode = UIDatePickerMode.Date
+        
         myUIPicker.delegate = self
         myUIPicker.dataSource = self
         
@@ -55,6 +61,29 @@ class RegisterFlightViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    func onDatePickerValueChanged(sender: AnyObject) {
+        // DatePickerの値変更時に呼ばれる。
+        let dateFormatter: NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        self.dateTextField.text =  dateFormatter.stringFromDate((sender as! UIDatePicker).date)
+    }
+    
+    @IBAction func didCancelClick(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func didCreateClick(sender: AnyObject) {
+        let newFlight = Flight(user: User.currentUser()!, date: myDatePicker.date, to: toTextField.text!, from: fromTextField.text!)
+        newFlight.saveInBackgroundWithBlock { (result, error) -> Void in
+            
+            if error == nil {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                MyAlertView.showErrorAlert(error!.localizedDescription)
+            }
+        }
+        
+    }
 }
 
 extension RegisterFlightViewController :UITextFieldDelegate{
