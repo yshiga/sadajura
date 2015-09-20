@@ -18,6 +18,14 @@
 		666337A61BAE464200A2F559 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666337A51BAE464200A2F559 /* ChatViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		66A5555C1BAE589100F63501 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A5555B1BAE589100F63501 /* AudioToolbox.framework */; };
 		66A555F61BAE691500F63501 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A555F51BAE691500F63501 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		66A555F81BAE6F4B00F63501 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A555F71BAE6F4B00F63501 /* Message.swift */; settings = {ASSET_TAGS = (); }; };
+		66A555FA1BAE700B00F63501 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A555F91BAE700B00F63501 /* User.swift */; settings = {ASSET_TAGS = (); }; };
+		66A555FC1BAE715F00F63501 /* MyLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A555FB1BAE715F00F63501 /* MyLoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		66A555FE1BAE718600F63501 /* MySignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A555FD1BAE718600F63501 /* MySignupViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		66A556001BAE71E300F63501 /* UIVIewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A555FF1BAE71E300F63501 /* UIVIewController+Navigation.swift */; settings = {ASSET_TAGS = (); }; };
+		66B311A01BAE96730063B146 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B3119F1BAE96730063B146 /* UIImage+Resize.swift */; settings = {ASSET_TAGS = (); }; };
+		66B311A21BAE98000063B146 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B311A11BAE98000063B146 /* Flight.swift */; settings = {ASSET_TAGS = (); }; };
+		66B311A41BAE9AB60063B146 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B311A31BAE9AB60063B146 /* Request.swift */; settings = {ASSET_TAGS = (); }; };
 		D245C8301BAE752D0072867D /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C82F1BAE752D0072867D /* ChatListViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D245C8321BAE786D0072867D /* ChatListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C8311BAE786D0072867D /* ChatListViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D245C8371BAE92AF0072867D /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = D245C8341BAE92AF0072867D /* chat.png */; settings = {ASSET_TAGS = (); }; };
@@ -69,6 +77,14 @@
 		66A5555B1BAE589100F63501 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		66A5555D1BAE595900F63501 /* sadajura-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sadajura-Bridging-Header.h"; sourceTree = "<group>"; };
 		66A555F51BAE691500F63501 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		66A555F71BAE6F4B00F63501 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		66A555F91BAE700B00F63501 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		66A555FB1BAE715F00F63501 /* MyLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLoginViewController.swift; sourceTree = "<group>"; };
+		66A555FD1BAE718600F63501 /* MySignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySignupViewController.swift; sourceTree = "<group>"; };
+		66A555FF1BAE71E300F63501 /* UIVIewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Navigation.swift"; sourceTree = "<group>"; };
+		66B3119F1BAE96730063B146 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
+		66B311A11BAE98000063B146 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		66B311A31BAE9AB60063B146 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		97DA118BE08D9EFC63DE1CF2 /* Pods-sadajura.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sadajura.release.xcconfig"; path = "Pods/Target Support Files/Pods-sadajura/Pods-sadajura.release.xcconfig"; sourceTree = "<group>"; };
 		D245C82F1BAE752D0072867D /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		D245C8311BAE786D0072867D /* ChatListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewCell.swift; sourceTree = "<group>"; };
@@ -164,6 +180,14 @@
 				666337A51BAE464200A2F559 /* ChatViewController.swift */,
 				66A5555D1BAE595900F63501 /* sadajura-Bridging-Header.h */,
 				66A555F51BAE691500F63501 /* Constants.swift */,
+				66A555F71BAE6F4B00F63501 /* Message.swift */,
+				66A555F91BAE700B00F63501 /* User.swift */,
+				66A555FB1BAE715F00F63501 /* MyLoginViewController.swift */,
+				66A555FD1BAE718600F63501 /* MySignupViewController.swift */,
+				66A555FF1BAE71E300F63501 /* UIVIewController+Navigation.swift */,
+				66B3119F1BAE96730063B146 /* UIImage+Resize.swift */,
+				66B311A11BAE98000063B146 /* Flight.swift */,
+				66B311A31BAE9AB60063B146 /* Request.swift */,
 			);
 			path = sadajura2;
 			sourceTree = "<group>";
@@ -390,19 +414,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66A556001BAE71E300F63501 /* UIVIewController+Navigation.swift in Sources */,
 				666336E81BAE3D9D00A2F559 /* ViewController.swift in Sources */,
 				666337A61BAE464200A2F559 /* ChatViewController.swift in Sources */,
 				D28272B81BAE4131003269CE /* RegisterFlightViewController.swift in Sources */,
+				66A555FE1BAE718600F63501 /* MySignupViewController.swift in Sources */,
+				66B311A01BAE96730063B146 /* UIImage+Resize.swift in Sources */,
 				D28272BD1BAE6028003269CE /* FriendTripTableViewCell.swift in Sources */,
+				66B311A41BAE9AB60063B146 /* Request.swift in Sources */,
+				66A555FC1BAE715F00F63501 /* MyLoginViewController.swift in Sources */,
 				D245C83D1BAE95360072867D /* SubmitViewController.swift in Sources */,
 				D245C8411BAE9BEC0072867D /* FlightDetailTableViewCell.swift in Sources */,
 				D245C8321BAE786D0072867D /* ChatListViewCell.swift in Sources */,
 				666336E61BAE3D9D00A2F559 /* AppDelegate.swift in Sources */,
+				66A555FA1BAE700B00F63501 /* User.swift in Sources */,
+				66A555F81BAE6F4B00F63501 /* Message.swift in Sources */,
 				66A555F61BAE691500F63501 /* Constants.swift in Sources */,
 				D245C83B1BAE93D20072867D /* FlightDetailViewController.swift in Sources */,
 				D245C8301BAE752D0072867D /* ChatListViewController.swift in Sources */,
 				D245C83F1BAE95F80072867D /* ProfileViewController.swift in Sources */,
 				D28272BB1BAE5F19003269CE /* FriendTripViewController.swift in Sources */,
+				66B311A21BAE98000063B146 /* Flight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

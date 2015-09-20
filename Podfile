@@ -4,6 +4,9 @@ use_frameworks!
 
 target 'sadajura' do
   pod 'JSQMessagesViewController'  
+  pod 'PhotoTweaks'
+  pod 'Parse'
+  pod 'ParseUI'
 end
 
 target 'sadajuraTests' do
