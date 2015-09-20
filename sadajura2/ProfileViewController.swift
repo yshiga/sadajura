@@ -23,6 +23,19 @@ class ProfileViewController: UIViewController {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        func initNavBar() {
+            
+            // configure the navigation bar
+            self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+            self.navigationController?.navigationBar.barTintColor = UIColor.navigationbarColor()
+            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+            self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+            
+            self.title = "Profile"
+        }
+        
+        initNavBar()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -50,6 +63,7 @@ class ProfileViewController: UIViewController {
         self.navigationController?.presentViewController(vc, animated: true, completion: nil)
         
     }
+
 }
 
 extension ProfileViewController:UITableViewDelegate{

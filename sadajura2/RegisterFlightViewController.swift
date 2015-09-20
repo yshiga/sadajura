@@ -30,10 +30,7 @@ class RegisterFlightViewController: UIViewController {
         myDatePicker = UIDatePicker()
         myDatePicker.addTarget(self, action: "onDatePickerValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
 
-
-        
         myUIPicker = UIPickerView()
-        
         
         myDatePicker.datePickerMode = UIDatePickerMode.Date
         
@@ -62,7 +59,6 @@ class RegisterFlightViewController: UIViewController {
     }
     
     func onDatePickerValueChanged(sender: AnyObject) {
-        // DatePickerの値変更時に呼ばれる。
         let dateFormatter: NSDateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         self.dateTextField.text =  dateFormatter.stringFromDate((sender as! UIDatePicker).date)
