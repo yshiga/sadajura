@@ -24,6 +24,8 @@
 		66A555FE1BAE718600F63501 /* MySignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A555FD1BAE718600F63501 /* MySignupViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		66A556001BAE71E300F63501 /* UIVIewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A555FF1BAE71E300F63501 /* UIVIewController+Navigation.swift */; settings = {ASSET_TAGS = (); }; };
 		66B311A01BAE96730063B146 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B3119F1BAE96730063B146 /* UIImage+Resize.swift */; settings = {ASSET_TAGS = (); }; };
+		66B311A21BAE98000063B146 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B311A11BAE98000063B146 /* Flight.swift */; settings = {ASSET_TAGS = (); }; };
+		66B311A41BAE9AB60063B146 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B311A31BAE9AB60063B146 /* Request.swift */; settings = {ASSET_TAGS = (); }; };
 		D28272B81BAE4131003269CE /* RegisterFlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28272B61BAE4131003269CE /* RegisterFlightViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D28272BB1BAE5F19003269CE /* FriendTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28272BA1BAE5F19003269CE /* FriendTripViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D28272BD1BAE6028003269CE /* FriendTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28272BC1BAE6028003269CE /* FriendTripTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
@@ -73,6 +75,8 @@
 		66A555FD1BAE718600F63501 /* MySignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySignupViewController.swift; sourceTree = "<group>"; };
 		66A555FF1BAE71E300F63501 /* UIVIewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Navigation.swift"; sourceTree = "<group>"; };
 		66B3119F1BAE96730063B146 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
+		66B311A11BAE98000063B146 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		66B311A31BAE9AB60063B146 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		97DA118BE08D9EFC63DE1CF2 /* Pods-sadajura.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sadajura.release.xcconfig"; path = "Pods/Target Support Files/Pods-sadajura/Pods-sadajura.release.xcconfig"; sourceTree = "<group>"; };
 		D28272B61BAE4131003269CE /* RegisterFlightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterFlightViewController.swift; sourceTree = "<group>"; };
 		D28272BA1BAE5F19003269CE /* FriendTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTripViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				66A555FD1BAE718600F63501 /* MySignupViewController.swift */,
 				66A555FF1BAE71E300F63501 /* UIVIewController+Navigation.swift */,
 				66B3119F1BAE96730063B146 /* UIImage+Resize.swift */,
+				66B311A11BAE98000063B146 /* Flight.swift */,
+				66B311A31BAE9AB60063B146 /* Request.swift */,
 			);
 			path = sadajura2;
 			sourceTree = "<group>";
@@ -381,12 +387,14 @@
 				66A555FE1BAE718600F63501 /* MySignupViewController.swift in Sources */,
 				66B311A01BAE96730063B146 /* UIImage+Resize.swift in Sources */,
 				D28272BD1BAE6028003269CE /* FriendTripTableViewCell.swift in Sources */,
+				66B311A41BAE9AB60063B146 /* Request.swift in Sources */,
 				66A555FC1BAE715F00F63501 /* MyLoginViewController.swift in Sources */,
 				666336E61BAE3D9D00A2F559 /* AppDelegate.swift in Sources */,
 				66A555FA1BAE700B00F63501 /* User.swift in Sources */,
 				66A555F81BAE6F4B00F63501 /* Message.swift in Sources */,
 				66A555F61BAE691500F63501 /* Constants.swift in Sources */,
 				D28272BB1BAE5F19003269CE /* FriendTripViewController.swift in Sources */,
+				66B311A21BAE98000063B146 /* Flight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

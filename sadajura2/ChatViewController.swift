@@ -50,7 +50,6 @@ class ChatViewController: JSQMessagesViewController{
         
         
         // debug
-        receiver = User.currentUser()!
        
     }
     
@@ -59,6 +58,7 @@ class ChatViewController: JSQMessagesViewController{
             openLoginView()
         } else {
             self.senderId = User.currentUser()!.objectId
+            receiver = User.currentUser()!
             loadMessages()
         }
     }
@@ -128,8 +128,10 @@ class ChatViewController: JSQMessagesViewController{
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
         
-        return self.messages[indexPath.item]
-        
+        if indexPath.item < self.messages.count {
+            return self.messages[indexPath.item]
+        }
+        return nil
     }
     
     // called when send button is clicked

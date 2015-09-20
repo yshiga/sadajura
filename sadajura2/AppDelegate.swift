@@ -48,6 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // init custom class
         User.initialize()
         Message.initialize()
+        Request.initialize()
+        Flight.initialize()
         
         Parse.setApplicationId(Constants.PARSE_ID,
             clientKey: Constants.PARSE_KEY)
