@@ -36,6 +36,9 @@ class SubmitViewController: UIViewController {
         self.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         
         
+        self.requstToUserImage.layer.cornerRadius = self.requstToUserImage.frame.width / 2
+        self.requstToUserImage.layer.masksToBounds = true
+        
         flight!.user.profileImage?.getDataInBackgroundWithBlock({ (data, error) -> Void in
             if error == nil {
                 let image = UIImage(data:data!)
