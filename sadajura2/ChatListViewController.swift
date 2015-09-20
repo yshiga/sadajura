@@ -71,7 +71,12 @@ extension ChatListViewController: UITableViewDataSource {
             }
         }
         
-        cell.userName.text = request.sender!.username
+        if User.currentUser()!.objectId == request.sender.objectId {
+//            cell.userName.text = "to " + request.receiver!.username!
+        } else {
+            cell.userName.text = "from " + request.sender!.username!
+        }
+        
         cell.travelRegion.text = request.product
         
         return cell
