@@ -10,6 +10,7 @@ import UIKit
 
 class RegisterFlightViewController: UIViewController {
 
+    @IBOutlet weak var navigationBar: UINavigationBar!
     //outlet
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var toLabel: UILabel!
@@ -26,6 +27,11 @@ class RegisterFlightViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationBar.barTintColor = UIColor.navigationbarColor()
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        self.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         
         myDatePicker = UIDatePicker()
         myDatePicker.addTarget(self, action: "onDatePickerValueChanged:", forControlEvents: UIControlEvents.ValueChanged)

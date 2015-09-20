@@ -559,6 +559,7 @@
                         <outlet property="dateTextField" destination="3L7-dm-Goy" id="KbB-bJ-NFs"/>
                         <outlet property="fromLabel" destination="3tZ-uk-UsD" id="FE9-IV-muT"/>
                         <outlet property="fromTextField" destination="msa-g3-bon" id="EcU-kb-mzb"/>
+                        <outlet property="navigationBar" destination="GyI-MS-Z6F" id="qeG-0f-wgJ"/>
                         <outlet property="toLabel" destination="xDI-6s-DfE" id="yiB-PW-saF"/>
                         <outlet property="toTextField" destination="yaF-ox-zzm" id="H7c-fX-lZj"/>
                     </connections>
