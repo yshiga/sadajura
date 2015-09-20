@@ -31,6 +31,7 @@
 		66B311AA1BAEAFDF0063B146 /* MyAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B311A91BAEAFDF0063B146 /* MyAlertView.swift */; settings = {ASSET_TAGS = (); }; };
 		66B311AC1BAEB1360063B146 /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B311AB1BAEB1360063B146 /* UIColor+Util.swift */; settings = {ASSET_TAGS = (); }; };
 		66BFE6001BAEEB27005C7756 /* ProfileViewFlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BFE5FF1BAEEB27005C7756 /* ProfileViewFlightCell.swift */; settings = {ASSET_TAGS = (); }; };
+		D24134681BAEFAA200550F9F /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D24134671BAEFAA200550F9F /* arrow.png */; settings = {ASSET_TAGS = (); }; };
 		D245C8301BAE752D0072867D /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C82F1BAE752D0072867D /* ChatListViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D245C8321BAE786D0072867D /* ChatListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C8311BAE786D0072867D /* ChatListViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D245C8371BAE92AF0072867D /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = D245C8341BAE92AF0072867D /* chat.png */; settings = {ASSET_TAGS = (); }; };
@@ -98,6 +99,7 @@
 		66B311AB1BAEB1360063B146 /* UIColor+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
 		66BFE5FF1BAEEB27005C7756 /* ProfileViewFlightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewFlightCell.swift; sourceTree = "<group>"; };
 		97DA118BE08D9EFC63DE1CF2 /* Pods-sadajura.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sadajura.release.xcconfig"; path = "Pods/Target Support Files/Pods-sadajura/Pods-sadajura.release.xcconfig"; sourceTree = "<group>"; };
+		D24134671BAEFAA200550F9F /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		D245C82F1BAE752D0072867D /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		D245C8311BAE786D0072867D /* ChatListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewCell.swift; sourceTree = "<group>"; };
 		D245C8341BAE92AF0072867D /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		D245C8331BAE8B420072867D /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				D24134671BAEFAA200550F9F /* arrow.png */,
 				D245C8441BAECD280072867D /* to.png */,
 				D245C8341BAE92AF0072867D /* chat.png */,
 				D245C8351BAE92AF0072867D /* plain.png */,
@@ -364,6 +367,7 @@
 				D245C8451BAECD280072867D /* to.png in Resources */,
 				D245C8371BAE92AF0072867D /* chat.png in Resources */,
 				D245C8391BAE92AF0072867D /* profile.png in Resources */,
+				D24134681BAEFAA200550F9F /* arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
