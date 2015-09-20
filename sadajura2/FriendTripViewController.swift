@@ -35,9 +35,8 @@ extension FriendTripViewController :UITableViewDelegate{
 
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("FlightDetailViewController") as!
             FlightDetailViewController
-            
+        vc.flight = self.flights![indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
-        
     }
 }
 

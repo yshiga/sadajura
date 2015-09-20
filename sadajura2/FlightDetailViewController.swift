@@ -24,9 +24,6 @@ class FlightDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // dummy
-        flight = Flight(user: User.currentUser()!, date: NSDate(), to: "Tokyo", from: "SF")
-        
         self.tableView.emptyDataSetSource = self;
         self.tableView.emptyDataSetDelegate = self;
         self.tableView.tableFooterView = UIView()

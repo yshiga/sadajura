@@ -10,10 +10,18 @@ import UIKit
 
 class ChatListViewController: UIViewController {
     
+    var requests:[Request] = [Request]()
+    
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchRequests()
     }
     
     override func didReceiveMemoryWarning() {
@@ -21,12 +29,24 @@ class ChatListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func fetchRequests(){
+       Request.findByRequestToMe { (requests, error) -> Void in
+        
+            if error == nil {
+                self.requests = requests
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
 }
 
 extension ChatListViewController :UITableViewDelegate{
     func tableView(tableView: UITableView,didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let vc = ChatViewController()
-        self.presentViewController(vc, animated: true, completion: nil)
+        
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("ChatView") as! ChatViewController
+        vc.request = self.requests[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -36,15 +56,23 @@ extension ChatListViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.requests.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ChatListViewCell", forIndexPath: indexPath) as! ChatListViewCell
         
-        cell.userImage.image = UIImage(named: "yuichi")
-        cell.userName.text = "Yuichiki Shiga "
-        cell.travelRegion.text = "Osaka"
+        let request = self.requests[indexPath.row]
+        request.sender!.profileImage?.getDataInBackgroundWithBlock { (data, error) -> Void in
+            if error == nil {
+                let image = UIImage(data: data!)
+                cell.userImage.image = image
+                
+            }
+        }
+        
+        cell.userName.text = request.sender!.username
+        cell.travelRegion.text = request.product
         
         return cell
     }

@@ -21,9 +21,6 @@ class SubmitViewController: UIViewController {
     @IBOutlet weak var requstToUserImage: PFImageView!
     @IBOutlet weak var requestToUserName: UILabel!
     
-
-    
-    
     var imagePicker :UIImagePickerController?
     
     override func viewDidLoad() {
@@ -44,8 +41,9 @@ class SubmitViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func didSubmitClick(sender: AnyObject) {
-        let newRequest = Request(flight: flight!, sender: User.currentUser()!, product: productNameTextField.text!, desc: productDescTextView.text, image: productImageView.image)
+        let newRequest = Request(flight: flight!, sender: User.currentUser()!, receiver:flight!.user, product: productNameTextField.text!, desc: productDescTextView.text, image: productImageView.image)
         
         newRequest.saveInBackgroundWithBlock { (result, error) -> Void in
             if error == nil {

@@ -12,6 +12,7 @@ class Request: PFObject, PFSubclassing {
     // MARK: - Public API
     @NSManaged public var flight: Flight!
     @NSManaged public var sender: User!
+    @NSManaged public var receiver: User!
     @NSManaged public var product: String!
     @NSManaged public var desc: String!
     @NSManaged public var image: PFFile!
@@ -22,11 +23,12 @@ class Request: PFObject, PFSubclassing {
         super.init()
     }
     
-    convenience init(flight:Flight, sender:User, product:String, desc:String, image:UIImage?) {
+    convenience init(flight:Flight, sender:User, receiver:User, product:String, desc:String, image:UIImage?) {
         self.init()
         
         self.flight = flight
         self.sender = sender
+        self.receiver = receiver
         self.product = product
         self.desc = desc
         
@@ -56,6 +58,25 @@ class Request: PFObject, PFSubclassing {
     
     public static func parseClassName() -> String {
         return "Request"
+    }
+    
+    class func findByRequestToMe(block:(request:[Request], error:NSError?)-> Void) {
+    
+        let query = PFQuery(className: Request.parseClassName())
+        query.cachePolicy = PFCachePolicy.NetworkElseCache
+        query.whereKey("receiver", equalTo: User.currentUser()!)
+        query.includeKey("sender")
+        query.orderByDescending("createdAt")
+        
+        query.findObjectsInBackgroundWithBlock({(objects, error) -> Void in
+            var requests = [Request]()
+            if error == nil {
+                requests = objects as! [Request]
+            } else {
+                print("\(error?.localizedDescription)", terminator: "")
+            }
+            block(request: requests, error: error)
+        })
     }
     
     class func findByFlight(flight:Flight, block:(request:[Request], error:NSError?)-> Void) {
