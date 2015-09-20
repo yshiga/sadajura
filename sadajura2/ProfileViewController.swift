@@ -77,6 +77,11 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController:UITableViewDelegate{
     func tableView(tableView: UITableView,didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("FlightDetailViewController") as!
+            FlightDetailViewController
+        vc.flight = self.flights[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
 
     }
 }

@@ -21,7 +21,7 @@ class RegisterFlightViewController: UIViewController {
     //variable
     private var myUIPicker: UIPickerView!
     private var myDatePicker: UIDatePicker!
-    private let myValues: NSArray = ["San Francisco","Tokyo","Corean","China"]
+    private let myValues: NSArray = ["San Francisco","Tokyo","Seoul","Beijing"]
     var textActiveField: UITextField!
     
     override func viewDidLoad() {
