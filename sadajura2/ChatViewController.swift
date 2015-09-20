@@ -50,16 +50,16 @@ class ChatViewController: JSQMessagesViewController{
         // message data
         // self.messages = [NSMutableArray array];
         
-        if request!.sender.objectId == User.currentUser()!.objectId {
-            self.sender = User.currentUser()!
+        self.sender = User.currentUser()!
+        
+        if request!.receiver.objectId ==  User.currentUser()!.objectId {
             self.receiver = request!.sender
         } else {
-            self.sender = request!.sender
-            self.receiver = User.currentUser()!
+            self.receiver = request!.receiver
         }
         
-        self.senderId = sender!.objectId
-        self.senderDisplayName = sender!.username
+        self.senderId = User.currentUser()!.objectId
+        self.senderDisplayName = User.currentUser()!.username
         
     }
     

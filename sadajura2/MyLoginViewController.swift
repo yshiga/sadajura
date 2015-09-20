@@ -16,7 +16,7 @@ class MyLogInViewController : PFLogInViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.logInView!.usernameField!.placeholder = "email"
+        self.logInView!.usernameField!.placeholder = "user name"
     }
     
     override func viewDidLayoutSubviews() {
