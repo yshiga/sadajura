@@ -24,7 +24,10 @@ class ChatViewController: JSQMessagesViewController{
     var incomingAvatar :JSQMessagesAvatarImage?
     var outgoingAvatar :JSQMessagesAvatarImage?
     
-    var receiver:User? // set by previous viewcontroller
+    var sender:User?
+    var receiver:User?
+    
+    var request:Request? // set by previous viewcontroller
     
     var imagePicker :UIImagePickerController?
     
@@ -33,8 +36,7 @@ class ChatViewController: JSQMessagesViewController{
         
         // properties of super class
         self.collectionView!.collectionViewLayout.springinessEnabled = true
-        self.senderId = "1"
-        self.senderDisplayName = "classmethod"
+
         
         // set MessageBubble
         let bubbleFactory = JSQMessagesBubbleImageFactory()
@@ -48,21 +50,26 @@ class ChatViewController: JSQMessagesViewController{
         // message data
         // self.messages = [NSMutableArray array];
         
+        if request!.sender.objectId == User.currentUser()!.objectId {
+            self.sender = User.currentUser()!
+            self.receiver = request!.sender
+        } else {
+            self.sender = request!.sender
+            self.receiver = User.currentUser()!
+        }
         
-        // debug
-       
+        self.senderId = sender!.objectId
+        self.senderDisplayName = sender!.username
+        
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.senderId = User.currentUser()!.objectId
-        receiver = User.currentUser()!
         loadMessages()
     }
     
     func loadMessages(){
         
-        Message.find(User.currentUser()!, user2:receiver!, block:{(messages,error)-> Void in
-            
+        Message.findByRequest(self.request!, block:{(messages,error)-> Void in
             
             self.messages.removeAll()
             for msg in messages {
@@ -133,8 +140,7 @@ class ChatViewController: JSQMessagesViewController{
     // called when send button is clicked
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
         
-        let user = User.currentUser()!
-        let message = Message(sender: user, receiver: receiver!, text: text, image: nil)
+        let message = Message(request:self.request!, sender: self.sender!, receiver: self.receiver!, text: text, image: nil)
         
         message.saveInBackgroundWithBlock { (result, error) -> Void in
             self.messages.append(JSQMessage.init(senderId: message.sender.objectId, displayName: message.sender.username, text:message.text))
@@ -180,13 +186,13 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
 extension ChatViewController : PhotoTweaksViewControllerDelegate {
     func photoTweaksController(controller: PhotoTweaksViewController!, didFinishWithCroppedImage croppedImage: UIImage!) {
         
-        let message = Message(sender: User.currentUser()!, receiver:receiver!, text:"", image: croppedImage)
+        let message = Message(request:self.request!, sender: self.sender!, receiver:self.receiver!, text:"", image: croppedImage)
         message.saveInBackgroundWithBlock { (result, error) -> Void in
             
             
         let mediaItem = JSQPhotoMediaItem(image: croppedImage)
         mediaItem.appliesMediaViewMaskAsOutgoing = true
-        self.messages.append(JSQMessage.init(senderId: User.currentUser()?.objectId, displayName: User.currentUser()?.username, media: mediaItem))
+        self.messages.append(JSQMessage.init(senderId: self.sender!.objectId, displayName: self.sender!.username, media: mediaItem))
         self.collectionView?.reloadData()
             controller.dismissViewControllerAnimated(true, completion:{
                 self.imagePicker!.dismissViewControllerAnimated(false, completion: nil)
