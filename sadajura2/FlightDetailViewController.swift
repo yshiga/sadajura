@@ -76,6 +76,9 @@ class FlightDetailViewController: UIViewController {
             case "Seoul":
                 myLat = 37.5667
                 myLon = 126.9667
+            case "San Francisco":
+                myLat = 37.7833
+                myLon = -122.4167
             default:
                 break
         }

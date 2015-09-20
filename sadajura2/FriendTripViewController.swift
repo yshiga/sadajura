@@ -66,12 +66,19 @@ extension FriendTripViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FriendTripTableViewCell", forIndexPath: indexPath) as! FriendTripTableViewCell
         
-        cell.userImage.image = UIImage(named: "yuichi")
-        cell.userImage.layer.cornerRadius = 25
+        
+        cell.userImage.layer.cornerRadius = cell.userImage.frame.width / 2
         cell.userImage.layer.masksToBounds = true
 
         
         if let flight = self.flights?[indexPath.row] {
+            flight.user.profileImage?.getDataInBackgroundWithBlock({ (data, error) -> Void in
+                if error == nil {
+                    let img = UIImage(data: data!)
+                    cell.userImage.image = img
+                }
+            })
+            
             cell.userName.text = flight.user.username
             cell.from.text = flight.from
             cell.to.text = flight.to
