@@ -18,6 +18,10 @@
 		666337A61BAE464200A2F559 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666337A51BAE464200A2F559 /* ChatViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		66A5555C1BAE589100F63501 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A5555B1BAE589100F63501 /* AudioToolbox.framework */; };
 		66A555F61BAE691500F63501 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A555F51BAE691500F63501 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		D28272B81BAE4131003269CE /* RegisterFlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28272B61BAE4131003269CE /* RegisterFlightViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D28272BB1BAE5F19003269CE /* FriendTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28272BA1BAE5F19003269CE /* FriendTripViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D28272BD1BAE6028003269CE /* FriendTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28272BC1BAE6028003269CE /* FriendTripTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		D28272BF1BAE6400003269CE /* imagetest.png in Resources */ = {isa = PBXBuildFile; fileRef = D28272BE1BAE6400003269CE /* imagetest.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		66A5555D1BAE595900F63501 /* sadajura-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sadajura-Bridging-Header.h"; sourceTree = "<group>"; };
 		66A555F51BAE691500F63501 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		97DA118BE08D9EFC63DE1CF2 /* Pods-sadajura.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sadajura.release.xcconfig"; path = "Pods/Target Support Files/Pods-sadajura/Pods-sadajura.release.xcconfig"; sourceTree = "<group>"; };
+		D28272B61BAE4131003269CE /* RegisterFlightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterFlightViewController.swift; sourceTree = "<group>"; };
+		D28272BA1BAE5F19003269CE /* FriendTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTripViewController.swift; sourceTree = "<group>"; };
+		D28272BC1BAE6028003269CE /* FriendTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTripTableViewCell.swift; sourceTree = "<group>"; };
+		D28272BE1BAE6400003269CE /* imagetest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagetest.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,8 +131,12 @@
 			children = (
 				666336E51BAE3D9D00A2F559 /* AppDelegate.swift */,
 				666336E71BAE3D9D00A2F559 /* ViewController.swift */,
+				D28272B61BAE4131003269CE /* RegisterFlightViewController.swift */,
+				D28272BA1BAE5F19003269CE /* FriendTripViewController.swift */,
 				666336E91BAE3D9D00A2F559 /* Main.storyboard */,
+				D28272BC1BAE6028003269CE /* FriendTripTableViewCell.swift */,
 				666336EC1BAE3D9D00A2F559 /* Assets.xcassets */,
+				D28272BE1BAE6400003269CE /* imagetest.png */,
 				666336EE1BAE3D9D00A2F559 /* LaunchScreen.storyboard */,
 				666336F11BAE3D9D00A2F559 /* Info.plist */,
 				666337A51BAE464200A2F559 /* ChatViewController.swift */,
@@ -271,6 +283,7 @@
 				666336F01BAE3D9D00A2F559 /* LaunchScreen.storyboard in Resources */,
 				666336ED1BAE3D9D00A2F559 /* Assets.xcassets in Resources */,
 				666336EB1BAE3D9D00A2F559 /* Main.storyboard in Resources */,
+				D28272BF1BAE6400003269CE /* imagetest.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,8 +358,11 @@
 			files = (
 				666336E81BAE3D9D00A2F559 /* ViewController.swift in Sources */,
 				666337A61BAE464200A2F559 /* ChatViewController.swift in Sources */,
+				D28272B81BAE4131003269CE /* RegisterFlightViewController.swift in Sources */,
+				D28272BD1BAE6028003269CE /* FriendTripTableViewCell.swift in Sources */,
 				666336E61BAE3D9D00A2F559 /* AppDelegate.swift in Sources */,
 				66A555F61BAE691500F63501 /* Constants.swift in Sources */,
+				D28272BB1BAE5F19003269CE /* FriendTripViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
